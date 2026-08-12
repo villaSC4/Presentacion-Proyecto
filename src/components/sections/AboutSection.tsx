@@ -61,12 +61,12 @@ export const AboutSection: React.FC = () => {
                 Sobre Nosotros & Nuestra Filosofía
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2A2826] leading-tight">
-                Donde la precisión médica se abraza con el bienestar holístico
+                Un espacio para ti
               </h2>
             </div>
 
             <p className="text-base text-[#6B6763] leading-relaxed">
-              En <strong className="text-[#2A2826]">Relax by Qmedic</strong> creemos que el dolor no debe ser una constante en tu vida cotidiana. Nacimos de la evolución natural de <strong>Qmedic Centro Médico Quiropráctico</strong>, combinando casi tres décadas de conocimiento anatómico especializado con una experiencia sensorial cálida, orgánicamente acondicionada para desconectar la mente y liberar el cuerpo.
+              En <strong className="text-[#2A2826]">Relax</strong> creemos que el bienestar es más que un lujo, es una necesidad. Cada sesión está pensada para que te desconectes del ruido de afuera, sueltes lo que cargas y te reencuentres contigo. Alivio y bienestar, en cada visita.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">

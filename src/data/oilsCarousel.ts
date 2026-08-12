@@ -1,3 +1,7 @@
+import imgAlmendra from '../assets/img/Almendra-Dulce.png';
+import imgJojoba from '../assets/img/Jojoba extravirgen.png';
+import imgSemillaUva from '../assets/img/Semilla-de-Uva.png';
+
 export interface CarouselProduct {
   id: string;
   name: string;
@@ -14,29 +18,42 @@ export interface CarouselProduct {
 
 export const OILS_CAROUSEL_PRODUCTS: CarouselProduct[] = [
   {
-    id: 'jojoba-almond',
-    name: 'Aceite Esencial de Jojoba & Almendras',
-    subtitle: 'Nutrición Profunda & Regeneración Cutánea',
-    description: 'Fórmula 100% pura y prensada en frío. Ideal para masajes relajantes y tratamientos de hidratación intensa.',
+    id: 'almendra-dulce',
+    name: 'Aceite de Almendra Dulce',
+    subtitle: 'Antiinflamatorio natural e hidratante con propiedades emolientes',
+    description: 'Fórmula 100% pura y prensada en frío. Rico en vitaminas A, B y E para suavizar la piel y aliviar la tensión muscular acumulada.',
     tag: '100% Orgánico',
     accentColor: '#8C5A3E',
     bgColor: '#8C5A3E',
     gradientFrom: '#8C5A3E',
     gradientTo: '#5A3420',
-    image: '/images/product_jojoba_dropper.png',
+    image: imgAlmendra,
     highlights: ['Extracto Prensado en Frío', 'Vitamina E & Ácidos Grasos', 'Absorción Rápida Sin Residuo']
   },
   {
-    id: 'keratin-coconut',
-    name: 'Tratamiento Intensivo de Queratina & Coco',
-    subtitle: 'Reparación Estructural & Brillo Natural',
-    description: 'Enriquecido con extracto de coco, macadamia, girasol y almendras para restaurar la vitalidad y sedosidad.',
-    tag: 'Fórmula Avanzada',
-    accentColor: '#2C3E35',
+    id: 'jojoba-extravirgen',
+    name: 'Aceite de Jojoba Extra-Virgen',
+    subtitle: 'Nutre e hidrata a profundidad aportando luminosidad a la piel',
+    description: 'Extracción orgánica de cera líquida. Afinidad biológica perfecta con la piel que aporta nutrición intensa sin dejar residuo graso.',
+    tag: '100% Orgánico',
+    accentColor: '#A66E4E',
+    bgColor: '#6E4A35',
+    gradientFrom: '#A66E4E',
+    gradientTo: '#4D3222',
+    image: imgJojoba,
+    highlights: ['Regulador del Sebo Cutáneo', 'Nutrición Profunda Orgánica', 'Luminosidad & Equilibrio Natural']
+  },
+  {
+    id: 'semilla-de-uva',
+    name: 'Aceite de Semilla de Uva',
+    subtitle: 'Antioxidante y antienvejecimiento mejora elasticidad y protege la piel',
+    description: 'Concentrado botánico rico en polifenoles. Protege contra el estrés oxidativo y estimula la firmeza y elasticidad muscular.',
+    tag: '100% Orgánico',
+    accentColor: '#3A4F41',
     bgColor: '#2C3E35',
-    gradientFrom: '#2C3E35',
-    gradientTo: '#17241F',
-    image: '/images/product_keratin_floating.png',
-    highlights: ['Queratina Botánica Orgánica', 'Coco, Macadamia & Girasol', 'Reparación Capilar & Muscular']
+    gradientFrom: '#3A4F41',
+    gradientTo: '#1A2820',
+    image: imgSemillaUva,
+    highlights: ['Antioxidante & Antienvejecimiento', 'Mejora Elasticidad Muscular', 'Fórmula Ligera y Protectora']
   }
 ];

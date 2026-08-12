@@ -90,9 +90,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
 
                 <div className="lg:col-span-6 relative flex items-center justify-center">
-
-                  <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-white/10 border border-white/20 absolute -z-10 shadow-inner" />
-
+                  <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-white/5 border border-white/15 absolute -z-10 shadow-2xl blur-xs" />
 
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: 30, rotate: -4 }}
@@ -106,16 +104,17 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                       if (info.offset.x > 50) handlePrev();
                       if (info.offset.x < -50) handleNext();
                     }}
-                    className="relative cursor-grab active:cursor-grabbing max-h-[380px] sm:max-h-[440px] flex items-center justify-center py-4"
+                    className="relative cursor-grab active:cursor-grabbing flex items-center justify-center py-4"
                   >
-                    <img
-                      src={currentProduct.image}
-                      alt={currentProduct.name}
-                      className="max-h-[360px] sm:max-h-[420px] w-auto object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)]"
-                    />
+                    <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl relative bg-[#FAF8F5]">
+                      <img
+                        src={currentProduct.image}
+                        alt={currentProduct.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                      />
+                    </div>
 
-
-                    <div className="absolute top-2 right-2 bg-white/90 text-[#2A2826] text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-white/60">
+                    <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/95 text-[#2A2826] text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-white/60 z-20">
                       {currentProduct.tag}
                     </div>
                   </motion.div>

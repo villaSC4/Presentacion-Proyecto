@@ -123,11 +123,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               <button
                 key={idx}
                 onClick={() => setPhraseIndex(idx)}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  idx === phraseIndex
+                className={`transition-all duration-300 rounded-full cursor-pointer ${idx === phraseIndex
                     ? 'w-6 h-2 bg-[#D4AF37]'
                     : 'w-2 h-2 bg-white/30 hover:bg-white/60'
-                }`}
+                  }`}
                 aria-label={`Frase ${idx + 1}`}
               />
             ))}
