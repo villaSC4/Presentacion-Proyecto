@@ -32,7 +32,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     badge: 'Popular',
-    image: '/images/massage_relax.png'
+    image: '/images/dream_relax.png'
   },
   {
     id: 'total-reset',
@@ -47,7 +47,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     badge: 'Recomendado',
-    image: '/images/massage_relax.png'
+    image: '/images/total_relax.png'
   },
   {
     id: 'relax-reset',
@@ -60,7 +60,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
     options: [
       { duration: '50 min', price: 120 }
     ],
-    image: '/images/massage_relax.png'
+    image: '/images/relax_reset.jpg'
   },
 
 
@@ -77,7 +77,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
     ],
     badge: 'Tecnología Exclusiva',
     techTag: 'Tecnología V-Conic Sin Dolor',
-    image: '/images/massage_detox.png'
+    image: '/images/detox_muscular.png'
   },
   {
     id: 'detox-superior',
@@ -92,7 +92,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     techTag: 'Tecnología V-Conic Sin Dolor',
-    image: '/images/massage_detox.png'
+    image: '/images/detox_muscular_superior.png'
   },
   {
     id: 'detox-inferior',
@@ -107,7 +107,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     techTag: 'Tecnología V-Conic Sin Dolor',
-    image: '/images/massage_detox.png'
+    image: '/images/detox_muscular_inferior.png'
   },
 
 
@@ -124,7 +124,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     badge: 'Terapia Holística',
-    image: '/images/massage_detox.png'
+    image: '/images/masaje_descontracturante.jpg'
   },
   {
     id: 'trend-superior',
@@ -138,7 +138,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '50 min', price: 120 },
       { duration: '80 min', price: 150 }
     ],
-    image: '/images/massage_detox.png'
+    image: '/images/trend_superior.png'
   },
   {
     id: 'trend-inferior-reflexologia',
@@ -152,6 +152,6 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '50 min', price: 120 },
       { duration: '80 min', price: 150 }
     ],
-    image: '/images/massage_detox.png'
+    image: '/images/trend_inferior_reflexologia.png'
   }
 ];

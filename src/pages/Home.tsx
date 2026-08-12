@@ -7,6 +7,7 @@ import { OilsCarouselSection } from '../components/sections/OilsCarouselSection'
 import { OilShowcase } from '../components/sections/OilShowcase';
 import { QuiropracticaHighlight } from '../components/sections/QuiropracticaHighlight';
 import { TestimonialsSection } from '../components/sections/TestimonialsSection';
+import { SpineSection } from '../components/sections/SpineSection';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -23,6 +24,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking, onSelectService }) =>
       <QuiropracticaHighlight onOpenBooking={onOpenBooking} />
       <OilsCarouselSection onOpenBooking={onOpenBooking} />
       <OilShowcase onOpenBooking={onOpenBooking} />
+      <SpineSection onOpenBooking={onOpenBooking} />
       <TestimonialsSection />
     </div>
   );
