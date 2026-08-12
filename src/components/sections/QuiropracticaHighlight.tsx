@@ -4,7 +4,6 @@ import { Sparkles, Check } from 'lucide-react';
 import { QMEDIC_PROMO, COMBINED_THERAPIES } from '../../data/qmedic';
 import { Accordion } from '../ui/Accordion';
 import { Button } from '../ui/Button';
-import logoImg from '../../assets/img/logo.jpg';
 
 interface QuiropracticaHighlightProps {
   onOpenBooking: () => void;
@@ -30,7 +29,7 @@ export const QuiropracticaHighlight: React.FC<QuiropracticaHighlightProps> = ({ 
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-xl shrink-0 overflow-hidden border border-[#D4AF37]/30">
-                  <img src={logoImg} alt="Qmedic Logo" className="w-full h-full object-cover" />
+                  <img src="/images/logo.png" alt="Qmedic Logo" className="w-full h-full object-cover" />
                 </div>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37] text-[#4A3020] text-xs font-bold uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5" />

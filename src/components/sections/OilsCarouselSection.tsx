@@ -44,6 +44,34 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
         }}
       />
 
+      {/* Capa de Decoración de fondo (Almendras / Jojoba / Uvas dispersas visibiles y claras) */}
+      <AnimatePresence>
+        {currentProduct.decoration && (
+          <motion.div
+            key={`bg-deco-${currentProduct.id}`}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{
+              opacity: 0.85,
+              scale: [1.05, 1.12, 1.05],
+              y: [0, -10, 0]
+            }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{
+              opacity: { duration: 0.4 },
+              scale: { duration: 6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+              y: { duration: 5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
+            }}
+            className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src={currentProduct.decoration}
+              alt={`Decoración para ${currentProduct.name}`}
+              className="w-full h-full object-cover opacity-90 filter drop-shadow-2xl scale-110 sm:scale-125"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
 
@@ -76,27 +104,29 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
         >
 
 
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl overflow-hidden min-h-[520px] flex items-center">
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl overflow-hidden min-h-[520px] flex items-center relative">
 
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentProduct.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full relative z-10"
               >
 
 
-                <div className="lg:col-span-6 relative flex items-center justify-center">
-                  <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-white/5 border border-white/15 absolute -z-10 shadow-2xl blur-xs" />
-
+                {/* Columna Izquierda: Imagen del producto apareciendo desde la izquierda */}
+                <motion.div
+                  initial={{ opacity: 0, x: -70, scale: 0.95 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -70, scale: 0.95 }}
+                  transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1.0] }}
+                  className="lg:col-span-6 relative flex items-center justify-center min-h-[340px] sm:min-h-[420px] py-4"
+                >
+                  {/* Botella del Producto - Mayor tamaño, protagonismo y sombra suave */}
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: 30, rotate: -4 }}
-                    animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
-                    exit={{ opacity: 0, scale: 0.8, y: -30, rotate: 4 }}
-                    transition={{ duration: 0.6, type: 'spring', stiffness: 200, damping: 20 }}
+                    key={`bottle-${currentProduct.id}`}
+                    initial={{ scale: 0.9, rotate: -2 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.5, type: 'spring', stiffness: 180, damping: 20 }}
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.2}
@@ -104,28 +134,38 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                       if (info.offset.x > 50) handlePrev();
                       if (info.offset.x < -50) handleNext();
                     }}
-                    className="relative cursor-grab active:cursor-grabbing flex items-center justify-center py-4"
+                    className="relative cursor-grab active:cursor-grabbing flex items-center justify-center py-2 z-20"
                   >
-                    <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl relative bg-[#FAF8F5]">
-                      <img
-                        src={currentProduct.image}
-                        alt={currentProduct.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
-                      />
-                    </div>
+                    {/* Sombra oscura y suave para integrar la botella */}
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 sm:w-64 md:w-72 h-8 sm:h-10 bg-black/55 blur-xl rounded-[100%] pointer-events-none -z-10 transform scale-y-50" />
 
-                    <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/95 text-[#2A2826] text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-white/60 z-20">
+                    {/* Imagen principal de la botella */}
+                    <img
+                      src={currentProduct.image}
+                      alt={currentProduct.name}
+                      className="h-64 sm:h-80 md:h-[400px] lg:h-[440px] w-auto object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-transform duration-500 ease-out"
+                    />
+
+                    {/* Etiqueta / Tag */}
+                    <div className="absolute top-0 right-0 sm:-top-2 sm:-right-2 bg-white/95 text-[#2A2826] text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-white/60 z-30">
                       {currentProduct.tag}
                     </div>
                   </motion.div>
-                </div>
+                </motion.div>
 
 
-                <div className="lg:col-span-6 space-y-6 text-left">
+                {/* Columna Derecha: Texto y detalles apareciendo desde la derecha */}
+                <motion.div
+                  initial={{ opacity: 0, x: 70 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 70 }}
+                  transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1.0], delay: 0.05 }}
+                  className="lg:col-span-6 space-y-6 text-left"
+                >
 
                   <div className="space-y-2">
                     <motion.span
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 }}
                       className="text-xs uppercase font-bold tracking-[0.2em] text-[#D4AF37]"
@@ -134,8 +174,8 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                     </motion.span>
 
                     <motion.h3
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, x: 25 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.15 }}
                       className="font-display font-bold text-3xl sm:text-4xl text-white leading-tight"
                     >
@@ -143,8 +183,8 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                     </motion.h3>
 
                     <motion.p
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, x: 25 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}
                       className="text-sm font-semibold text-white/90 italic"
                     >
@@ -153,8 +193,8 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                   </div>
 
                   <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 25 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.25 }}
                     className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans"
                   >
@@ -163,8 +203,8 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
 
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 25 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
                     className="space-y-2"
                   >
@@ -186,8 +226,8 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
 
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 25 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.35 }}
                     className="pt-2 flex flex-col sm:flex-row items-center gap-3"
                   >
@@ -202,7 +242,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                     </Button>
                   </motion.div>
 
-                </div>
+                </motion.div>
 
               </motion.div>
             </AnimatePresence>
@@ -212,7 +252,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
           <button
             onClick={handlePrev}
-            className="absolute top-1/2 -left-4 sm:-left-6 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#2A2826] shadow-2xl border border-[#EFECE6] flex items-center justify-center hover:scale-110 transition-all cursor-pointer z-20"
+            className="absolute top-1/2 -left-4 sm:-left-6 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#2A2826] shadow-2xl border border-[#EFECE6] flex items-center justify-center hover:scale-110 transition-all cursor-pointer z-40"
             aria-label="Producto anterior"
           >
             <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
@@ -220,7 +260,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
           <button
             onClick={handleNext}
-            className="absolute top-1/2 -right-4 sm:-right-6 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#2A2826] shadow-2xl border border-[#EFECE6] flex items-center justify-center hover:scale-110 transition-all cursor-pointer z-20"
+            className="absolute top-1/2 -right-4 sm:-right-6 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#2A2826] shadow-2xl border border-[#EFECE6] flex items-center justify-center hover:scale-110 transition-all cursor-pointer z-40"
             aria-label="Producto siguiente"
           >
             <ChevronRight className="w-6 h-6 stroke-[2.5]" />

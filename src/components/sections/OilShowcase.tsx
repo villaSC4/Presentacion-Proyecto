@@ -122,8 +122,13 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
                 className="bg-white text-[#2A2826] p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl space-y-6"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-                  <div className="sm:col-span-5 arch-top overflow-hidden h-44 sm:h-52 border border-[#EFECE6] bg-[#FAF8F5] relative shadow-sm">
-                    <img src={activeOil.image} alt={activeOil.name} className="w-full h-full object-cover" />
+                  <div className="sm:col-span-5 arch-top overflow-hidden h-48 sm:h-56 border border-[#EFECE6] bg-[#FAF8F5] relative shadow-sm flex items-center justify-center p-3">
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-6 bg-black/40 blur-md rounded-[100%] pointer-events-none scale-y-50" />
+                    <img
+                      src={activeOil.image}
+                      alt={activeOil.name}
+                      className="h-full w-auto object-contain filter drop-shadow-lg hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                   <div className="sm:col-span-7 space-y-2">
                     <span className="text-[10px] uppercase font-bold tracking-widest text-[#B88A75]">

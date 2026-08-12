@@ -1,6 +1,9 @@
-import imgAlmendra from '../assets/img/Almendra-Dulce.png';
-import imgJojoba from '../assets/img/Jojoba extravirgen.png';
-import imgSemillaUva from '../assets/img/Semilla-de-Uva.png';
+import imgAlmendra from '../assets/img/Almendra-Dulce2.png';
+import imgAlmendrasDispersas from '../assets/img/almendras_dispersas.png';
+import imgJojoba from '../assets/img/Aceite de Jojoba.png';
+import imgJojobaDisperso from '../assets/img/Jojoba-disperso.png';
+import imgSemillaUva from '../assets/img/aceite de uva.png';
+import imgUvasDispersas from '../assets/img/uvas-dispersas.png';
 
 export interface CarouselProduct {
   id: string;
@@ -12,7 +15,8 @@ export interface CarouselProduct {
   bgColor: string;
   gradientFrom: string;
   gradientTo: string;
-  image: string;
+  image: string; // Botella / Producto principal
+  decoration?: string; // Material disperso correspondiente (opcional por producto)
   highlights: string[];
 }
 
@@ -28,6 +32,7 @@ export const OILS_CAROUSEL_PRODUCTS: CarouselProduct[] = [
     gradientFrom: '#8C5A3E',
     gradientTo: '#5A3420',
     image: imgAlmendra,
+    decoration: imgAlmendrasDispersas,
     highlights: ['Extracto Prensado en Frío', 'Vitamina E & Ácidos Grasos', 'Absorción Rápida Sin Residuo']
   },
   {
@@ -41,6 +46,7 @@ export const OILS_CAROUSEL_PRODUCTS: CarouselProduct[] = [
     gradientFrom: '#A66E4E',
     gradientTo: '#4D3222',
     image: imgJojoba,
+    decoration: imgJojobaDisperso,
     highlights: ['Regulador del Sebo Cutáneo', 'Nutrición Profunda Orgánica', 'Luminosidad & Equilibrio Natural']
   },
   {
@@ -54,6 +60,7 @@ export const OILS_CAROUSEL_PRODUCTS: CarouselProduct[] = [
     gradientFrom: '#3A4F41',
     gradientTo: '#1A2820',
     image: imgSemillaUva,
+    decoration: imgUvasDispersas,
     highlights: ['Antioxidante & Antienvejecimiento', 'Mejora Elasticidad Muscular', 'Fórmula Ligera y Protectora']
   }
 ];

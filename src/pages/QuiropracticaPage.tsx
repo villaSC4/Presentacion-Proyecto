@@ -5,7 +5,6 @@ import { COMBINED_THERAPIES } from '../data/qmedic';
 import { Accordion } from '../components/ui/Accordion';
 import { Button } from '../components/ui/Button';
 import { AnimatedSection } from '../components/ui/AnimatedSection';
-import logoImg from '../assets/img/logo.jpg';
 
 interface QuiropracticaPageProps {
   onOpenBooking: () => void;
@@ -28,7 +27,7 @@ export const QuiropracticaPage: React.FC<QuiropracticaPageProps> = ({ onOpenBook
           >
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl shrink-0 border border-[#8C5A3E]/30 shadow-sm overflow-hidden">
-                <img src={logoImg} alt="Qmedic Logo" className="w-full h-full object-cover" />
+                <img src="/images/logo.png" alt="Qmedic Logo" className="w-full h-full object-cover" />
               </div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBEFEF] text-[#2C3E35] text-xs font-bold border border-[#2C3E35]/20">
                 <Award className="w-4 h-4 text-[#2C3E35]" />

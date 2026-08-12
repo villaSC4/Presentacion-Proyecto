@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Feather } from 'lucide-react';
-import logoImg from '../../assets/img/logo.jpg';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -39,7 +38,7 @@ export const AboutSection: React.FC = () => {
 
               <div className="absolute -bottom-6 -right-4 bg-[#52331C] text-white p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-[#8C5A3E]/40">
                 <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-[#D4AF37]/30">
-                  <img src={logoImg} alt="Qmedic Seal" className="w-full h-full object-cover" />
+                  <img src="/images/logo.png" alt="Qmedic Seal" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-xs">
                   <p className="font-bold uppercase tracking-wider text-[#D4AF37]">27+ Años</p>

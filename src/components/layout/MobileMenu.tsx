@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { X, MapPin, Phone, Sparkles } from 'lucide-react';
 import { SOCIAL_LINKS, LOCATIONS } from '../../data/locations';
-import logoImg from '../../assets/img/logo.jpg';
+import logoImg from '../../assets/img/logo.jpeg';
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

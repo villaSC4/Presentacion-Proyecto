@@ -1,6 +1,9 @@
-import imgAlmendra from '../assets/img/Almendra-Dulce.png';
-import imgJojoba from '../assets/img/Jojoba extravirgen.png';
-import imgSemillaUva from '../assets/img/Semilla-de-Uva.png';
+import imgAlmendra from '../assets/img/Almendra-Dulce2.png';
+import imgAlmendrasDispersas from '../assets/img/almendras_dispersas.png';
+import imgJojoba from '../assets/img/Aceite de Jojoba.png';
+import imgJojobaDisperso from '../assets/img/Jojoba-disperso.png';
+import imgSemillaUva from '../assets/img/aceite de uva.png';
+import imgUvasDispersas from '../assets/img/uvas-dispersas.png';
 
 export interface OilItem {
   id: string;
@@ -14,6 +17,7 @@ export interface OilItem {
   texture: string;
   aromaProfile: string;
   image: string;
+  decoration?: string;
   colorHex: string;
 }
 
@@ -30,6 +34,7 @@ export const BOTANICAL_OILS: OilItem[] = [
     texture: 'Sedosa, fluida y reconfortante',
     aromaProfile: 'Suave, dulce y ligeramente abizcochado',
     image: imgAlmendra,
+    decoration: imgAlmendrasDispersas,
     colorHex: '#D4A373'
   },
   {
@@ -44,6 +49,7 @@ export const BOTANICAL_OILS: OilItem[] = [
     texture: 'Ligera, aterciopelada y de toque seco',
     aromaProfile: 'Fresco, herbal y sutilmente amaderado',
     image: imgJojoba,
+    decoration: imgJojobaDisperso,
     colorHex: '#A66E4E'
   },
   {
@@ -58,6 +64,7 @@ export const BOTANICAL_OILS: OilItem[] = [
     texture: 'Ultra ligera, deslizante y tonificante',
     aromaProfile: 'Limpio, neutro y ligeramente afrutado',
     image: imgSemillaUva,
+    decoration: imgUvasDispersas,
     colorHex: '#3A4F41'
   }
 ];

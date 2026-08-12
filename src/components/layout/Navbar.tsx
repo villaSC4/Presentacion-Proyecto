@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Calendar, PhoneCall } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
-import logoImg from '../../assets/img/logo.jpg';
+import logoImg from '../../assets/img/logo.jpeg';
 
 interface NavbarProps {
   onOpenBooking: () => void;

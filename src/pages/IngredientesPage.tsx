@@ -2,9 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { OilShowcase } from '../components/sections/OilShowcase';
 import { OilsCarouselSection } from '../components/sections/OilsCarouselSection';
-import { BOTANICAL_OILS } from '../data/oils';
-import { CheckCircle2 } from 'lucide-react';
-import { Button } from '../components/ui/Button';
 
 const vp = { once: false, amount: 0.1 };
 const ease = [0.215, 0.61, 0.355, 1.0] as const;
