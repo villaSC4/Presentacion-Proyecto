@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { X, MapPin, Phone, Sparkles } from 'lucide-react';
 import { SOCIAL_LINKS, LOCATIONS } from '../../data/locations';
+import logoImg from '../../assets/img/logo.jpg';
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -57,7 +58,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl shadow-sm border border-[#8C5A3E]/30 overflow-hidden shrink-0">
                   <img
-                    src="/images/logo.png"
+                    src={logoImg}
                     alt="Qmedic Logo Oficial"
                     className="w-full h-full object-cover"
                   />

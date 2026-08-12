@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Calendar, PhoneCall } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
+import logoImg from '../../assets/img/logo.jpg';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -46,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <NavLink to="/" className="group flex items-center gap-3 cursor-pointer">
               <div className="w-11 h-11 rounded-2xl group-hover:scale-105 transition-transform overflow-hidden shadow-sm border border-[#B88A75]/40">
                 <img
-                  src="/images/logo.png"
+                  src={logoImg}
                   alt="Qmedic Logo Oficial"
                   className="w-full h-full object-cover"
                 />
