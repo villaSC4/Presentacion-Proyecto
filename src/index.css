@@ -31,7 +31,6 @@
   --color-brand-gold: #C9A468;
 }
 
-/* Global Typography Adjustments: Relaxed, Warm & Clean */
 body {
   font-family: var(--font-sans);
   color: #4A3E3D;
@@ -44,13 +43,12 @@ h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
   letter-spacing: -0.01em;
 }
 
-/* Custom Soft Glassmorphism */
 @layer utilities {
   .arch-top {
     border-top-left-radius: 9999px;
     border-top-right-radius: 9999px;
   }
-  
+
   .arch-full {
     border-radius: 9999px 9999px 24px 24px;
   }
@@ -70,7 +68,6 @@ h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
   }
 }
 
-/* Custom Soft Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

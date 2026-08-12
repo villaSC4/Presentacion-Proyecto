@@ -5,7 +5,7 @@ import { BOTANICAL_OILS } from '../../data/oils';
 import type { OilItem } from '../../data/oils';
 import { Button } from '../ui/Button';
 
-// Shared scroll-reveal config for bidirectional trigger
+
 const vp = { once: false, amount: 0.12 };
 const ease = [0.215, 0.61, 0.355, 1.0] as const;
 
@@ -17,26 +17,26 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
   const [selectedOilId, setSelectedOilId] = useState<string>(BOTANICAL_OILS[0].id);
   const activeOil = BOTANICAL_OILS.find(o => o.id === selectedOilId) || BOTANICAL_OILS[0];
 
-  // Quiz State for Recommendation Engine
+
   const [quizSkinType, setQuizSkinType] = useState<'seca' | 'sensible' | 'mixta'>('sensible');
   const [quizGoal, setQuizGoal] = useState<'relajar' | 'descontracturar' | 'nutrir'>('relajar');
 
   const getRecommendedOil = (): OilItem => {
-    if (quizGoal === 'descontracturar') return BOTANICAL_OILS[2]; // Grape seed
-    if (quizSkinType === 'mixta') return BOTANICAL_OILS[1]; // Jojoba
-    return BOTANICAL_OILS[0]; // Sweet Almond
+    if (quizGoal === 'descontracturar') return BOTANICAL_OILS[2];
+    if (quizSkinType === 'mixta') return BOTANICAL_OILS[1];
+    return BOTANICAL_OILS[0];
   };
 
   const recommendedOil = getRecommendedOil();
 
   return (
     <section className="py-20 bg-[#2C3E35] text-white relative overflow-hidden">
-      {/* Subtle Background Glow */}
+
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#8C5A3E]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Header — slides down from above */}
+
+
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,10 +55,10 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
           </p>
         </motion.div>
 
-        {/* OIL SHOWCASE TABS & MAIN DISPLAY */}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
-          
-          {/* LEFT: OIL SELECTION LIST — slides from left */}
+
+
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -104,7 +104,7 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
             })}
           </motion.div>
 
-          {/* RIGHT: DETAILED CARD OF ACTIVE OIL — slides from right */}
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -145,7 +145,7 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
                   {activeOil.description}
                 </p>
 
-                {/* PROPERTIES GRID */}
+
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#B88A75] mb-2">
                     Beneficios Principales:
@@ -175,7 +175,7 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
 
         </div>
 
-        {/* INTERACTIVE OIL RECOMMENDER QUIZ — scales up from below */}
+
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -194,7 +194,7 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Q1 */}
+
             <div className="space-y-2">
               <label className="text-xs font-semibold text-white/90">1. ¿Cómo sientes tu piel habitualmente?</label>
               <div className="grid grid-cols-3 gap-2">
@@ -216,7 +216,7 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
               </div>
             </div>
 
-            {/* Q2 */}
+
             <div className="space-y-2">
               <label className="text-xs font-semibold text-white/90">2. ¿Cuál es tu objetivo principal?</label>
               <div className="grid grid-cols-3 gap-2">
@@ -239,7 +239,7 @@ export const OilShowcase: React.FC<OilShowcaseProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          {/* QUIZ RESULT BANNER */}
+
           <div className="p-4 rounded-2xl bg-white/10 border border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs space-y-1">
               <span className="text-[10px] uppercase tracking-wider font-bold text-[#D4AF37]">

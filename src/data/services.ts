@@ -18,7 +18,7 @@ export interface ServiceItem {
 }
 
 export const MASSAGE_SERVICES: ServiceItem[] = [
-  // RELAJANTES
+
   {
     id: 'dream-relax',
     title: 'Dream Relax',
@@ -63,7 +63,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
     image: '/images/massage_relax.png'
   },
 
-  // DESCONTRACTURANTE DETOX (Tecnología V-conic sin dolor)
+
   {
     id: 'detox-completo',
     title: 'Detox Muscular Completo',
@@ -110,7 +110,7 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
     image: '/images/massage_detox.png'
   },
 
-  // DESCONTRACTURANTES CLÁSICOS Y ESPECIALES
+
   {
     id: 'bambu-herramientas',
     title: 'Descontracturante con Cañas de Bambú',

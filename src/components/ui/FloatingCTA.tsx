@@ -6,7 +6,7 @@ interface FloatingCTAProps {
   onOpenBooking: () => void;
 }
 
-// WhatsApp SVG icon (official brand icon)
+
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
     <path
@@ -30,7 +30,7 @@ export const FloatingCTA: React.FC<FloatingCTAProps> = () => {
       }}
       className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3"
     >
-      {/* Direct WhatsApp Floating Icon */}
+
       <motion.a
         whileHover={{ scale: 1.12 }}
         whileTap={{ scale: 0.92 }}
@@ -40,12 +40,12 @@ export const FloatingCTA: React.FC<FloatingCTAProps> = () => {
         className="w-16 h-16 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:bg-[#1EBE5B] transition-colors relative cursor-pointer group"
         title="Chat directo WhatsApp"
       >
-        {/* Continuous WhatsApp Ripple Ring */}
+
         <span className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-40 pointer-events-none" />
 
         <WhatsAppIcon />
 
-        {/* Hover Tooltip */}
+
         <span className="absolute right-[72px] bg-[#2A2826] text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
           Escríbenos a WhatsApp
         </span>

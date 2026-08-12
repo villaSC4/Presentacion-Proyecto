@@ -34,7 +34,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const currentOilObj = BOTANICAL_OILS.find(o => o.id === selectedOil) || BOTANICAL_OILS[0];
   const currentLocationObj = LOCATIONS.find(l => l.id === selectedLocation) || LOCATIONS[0];
 
-  // Calculate current price based on duration
+
   const priceObj = currentServiceObj.options.find(o => o.duration === selectedDuration) || currentServiceObj.options[0];
   const currentPrice = priceObj ? priceObj.price : 120;
 
@@ -71,7 +71,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           transition={{ duration: 0.25, ease: 'easeOut' }}
           className="relative w-full max-w-2xl bg-[#FAF8F5] rounded-3xl shadow-2xl overflow-hidden border border-[#EFECE6] max-h-[90vh] flex flex-col"
         >
-          {/* Modal Header */}
+
           <div className="flex items-center justify-between px-6 py-4 bg-white border-b border-[#EFECE6]">
             <div>
               <div className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             </button>
           </div>
 
-          {/* Progress Bar */}
+
           <div className="w-full bg-[#EFECE6] h-1.5">
             <motion.div
               className="bg-[#8C5A3E] h-full"
@@ -100,9 +100,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             />
           </div>
 
-          {/* Step Contents */}
+
           <div className="p-6 overflow-y-auto flex-1 space-y-6">
-            {/* STEP 1: SERVICE SELECTION */}
+
             {step === 1 && (
               <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} className="space-y-4">
                 <h3 className="font-serif font-semibold text-lg text-[#2A2826] flex items-center gap-2">
@@ -152,7 +152,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </motion.div>
             )}
 
-            {/* STEP 2: DURATION */}
+
             {step === 2 && (
               <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} className="space-y-4">
                 <h3 className="font-serif font-semibold text-lg text-[#2A2826] flex items-center gap-2">
@@ -195,7 +195,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </motion.div>
             )}
 
-            {/* STEP 3: NATURAL OIL */}
+
             {step === 3 && (
               <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} className="space-y-4">
                 <h3 className="font-serif font-semibold text-lg text-[#2A2826] flex items-center gap-2">
@@ -250,7 +250,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </motion.div>
             )}
 
-            {/* STEP 4: LOCATION & SUMMARY */}
+
             {step === 4 && (
               <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} className="space-y-4">
                 <h3 className="font-serif font-semibold text-lg text-[#2A2826] flex items-center gap-2">
@@ -284,7 +284,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   })}
                 </div>
 
-                {/* Booking Summary Box */}
+
                 <div className="p-5 rounded-2xl bg-[#2C3E35] text-white space-y-3">
                   <h4 className="font-serif font-semibold text-base text-[#EFECE6] border-b border-white/10 pb-2 flex items-center justify-between">
                     <span>Resumen de tu Reserva</span>
@@ -300,7 +300,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             )}
           </div>
 
-          {/* Modal Footer Controls */}
+
           <div className="flex items-center justify-between px-6 py-4 bg-white border-t border-[#EFECE6]">
             {step > 1 ? (
               <button

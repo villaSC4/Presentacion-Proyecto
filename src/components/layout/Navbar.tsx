@@ -42,13 +42,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* LOGO */}
+
             <NavLink to="/" className="group flex items-center gap-3 cursor-pointer">
-              <div className="w-11 h-11 rounded-2xl bg-[#52331C] p-1.5 shadow-sm border border-[#B88A75]/40 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden">
+              <div className="w-11 h-11 rounded-2xl group-hover:scale-105 transition-transform overflow-hidden shadow-sm border border-[#B88A75]/40">
                 <img
-                  src="/images/qmedic_logo.png"
+                  src="/images/logo.png"
                   alt="Qmedic Logo Oficial"
-                  className="w-full h-full object-contain filter brightness-110"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex flex-col">
@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </div>
             </NavLink>
 
-            {/* DESKTOP NAV LINKS */}
+
             <nav className={`hidden lg:flex items-center gap-1 px-4 py-2 rounded-full border backdrop-blur-md transition-all ${
               isScrolled
                 ? 'bg-[#EFE7DD]/80 border-[#CBB5A1]'
@@ -93,9 +93,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               ))}
             </nav>
 
-            {/* RIGHT SIDE ACTIONS */}
+
             <div className="hidden lg:flex items-center gap-4">
-              {/* Booking CTA */}
+
               <button
                 onClick={onOpenBooking}
                 className="px-5 py-2.5 rounded-full bg-[#B88A75] text-white text-xs font-bold hover:bg-[#A37763] transition-all flex items-center gap-2 shadow-sm cursor-pointer hover:shadow-md active:scale-98"
@@ -105,7 +105,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </button>
             </div>
 
-            {/* MOBILE HAMBURGER BUTTON */}
+
             <div className="flex items-center gap-2 lg:hidden">
               <button
                 onClick={onOpenBooking}
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         </div>
       </header>
 
-      {/* MOBILE MENU DRAWER */}
+
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}

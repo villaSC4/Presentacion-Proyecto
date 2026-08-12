@@ -55,7 +55,7 @@ export const CategoryGrid: React.FC = () => {
   return (
     <section className="py-20 bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+
         <AnimatedSection direction="up" className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#8C5A3E]">
             Nuestros Pilares de Bienestar
@@ -68,7 +68,7 @@ export const CategoryGrid: React.FC = () => {
           </p>
         </AnimatedSection>
 
-        {/* Cards Grid */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, index) => {
             const Icon = cat.icon;
@@ -86,10 +86,10 @@ export const CategoryGrid: React.FC = () => {
                   to={cat.link}
                   className="group relative block bg-white rounded-3xl p-6 border border-[#EFECE6] shadow-sm hover:shadow-2xl transition-all duration-300 h-full flex flex-col justify-between overflow-hidden"
                 >
-                  {/* Glowing Hover Accent Border Glow */}
+
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-[#8C5A3E] to-[#2C3E35] rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
 
-                  {/* Card Background Subtle Image Mask */}
+
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none scale-105 group-hover:scale-100 transition-transform">
                     <img src={cat.image} alt={cat.title} className="w-full h-full object-cover" />
                   </div>

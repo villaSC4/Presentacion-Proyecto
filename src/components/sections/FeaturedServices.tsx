@@ -10,7 +10,7 @@ interface FeaturedServicesProps {
 }
 
 export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectService }) => {
-  // State for selected duration per service card (defaults to 50 min or 80 min)
+
   const [selectedDurations, setSelectedDurations] = useState<Record<string, '50 min' | '80 min'>>({
     'dream-relax': '80 min',
     'total-reset': '50 min',
@@ -27,8 +27,8 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
   return (
     <section id="catalogo" className="py-20 bg-white border-t border-[#EFECE6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
+
+
         <AnimatedSection direction="up" className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3 max-w-2xl">
             <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#8C5A3E]">
@@ -50,7 +50,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
           </a>
         </AnimatedSection>
 
-        {/* Services Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredList.map((service, index) => {
             const currentDuration = selectedDurations[service.id] || service.options[0].duration;
@@ -66,7 +66,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="bg-[#FAF8F5] rounded-3xl p-6 border border-[#EFECE6] flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group"
               >
-                {/* Badge if available */}
+
                 {service.badge && (
                   <div className="absolute top-4 right-4 z-10">
                     <span className="px-3 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#8C5A3E] text-white shadow-xs">
@@ -76,7 +76,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                 )}
 
                 <div>
-                  {/* Service Image Frame */}
+
                   <div className="arch-top overflow-hidden h-44 mb-5 border border-white shadow-sm bg-white">
                     <img
                       src={service.image}
@@ -85,7 +85,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                     />
                   </div>
 
-                  {/* Title & Category */}
+
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#8C5A3E]">
                     {service.categoryLabel}
                   </span>
@@ -96,7 +96,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                     {service.subtitle}
                   </p>
 
-                  {/* Duration Selector Tabs inside Card */}
+
                   <div className="mt-4 p-1 rounded-full bg-[#EFECE6] flex items-center gap-1">
                     {service.options.map((opt) => {
                       const isActive = currentDuration === opt.duration;
@@ -116,7 +116,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                     })}
                   </div>
 
-                  {/* Price display */}
+
                   <div className="mt-4 flex items-baseline justify-between border-b border-[#EFECE6] pb-4">
                     <span className="text-xs text-[#6B6763]">Tarifa Sesión</span>
                     <div className="flex items-baseline gap-1">
@@ -127,7 +127,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                     </div>
                   </div>
 
-                  {/* Benefits */}
+
                   <ul className="mt-4 space-y-1.5 text-xs text-[#6B6763]">
                     {service.benefits.slice(0, 3).map((b, idx) => (
                       <li key={idx} className="flex items-center gap-2">
@@ -138,7 +138,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                   </ul>
                 </div>
 
-                {/* Booking Button */}
+
                 <div className="mt-6 pt-2">
                   <Button
                     variant="clay"

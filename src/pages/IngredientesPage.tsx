@@ -6,7 +6,7 @@ import { BOTANICAL_OILS } from '../data/oils';
 import { CheckCircle2 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
-// Bidirectional scroll-reveal config
+
 const vp = { once: false, amount: 0.1 };
 const ease = [0.215, 0.61, 0.355, 1.0] as const;
 
@@ -17,8 +17,8 @@ interface IngredientesPageProps {
 export const IngredientesPage: React.FC<IngredientesPageProps> = ({ onOpenBooking }) => {
   return (
     <div className="pt-32 pb-24 bg-[#F7F3ED] min-h-screen space-y-16">
-      
-      {/* Header — slides down from above */}
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -40 }}
@@ -39,11 +39,11 @@ export const IngredientesPage: React.FC<IngredientesPageProps> = ({ onOpenBookin
         </motion.div>
       </div>
 
-      {/* DETAILED CARDS FOR THE 3 OILS — staggered slide-up */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {BOTANICAL_OILS.map((oil, index) => (
-            // Outer: scroll reveal wrapper
+
             <motion.div
               key={oil.id + '-scroll'}
               initial={{ opacity: 0, y: 60 }}
@@ -51,14 +51,14 @@ export const IngredientesPage: React.FC<IngredientesPageProps> = ({ onOpenBookin
               viewport={vp}
               transition={{ duration: 0.6, ease, delay: index * 0.12 }}
             >
-              {/* Inner: hover lift */}
+
               <motion.div
                 whileHover={{ y: -7, scale: 1.02, boxShadow: '0 22px 44px rgba(184,138,117,0.18)' }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 className="bg-white rounded-3xl p-6 border border-[#EFE7DD] shadow-xs flex flex-col justify-between h-full cursor-default"
               >
                 <div>
-                  {/* Real Photograph Arch Frame */}
+
                   <div className="arch-top overflow-hidden h-52 mb-5 border border-[#CBB5A1]/30 bg-[#F7F3ED] relative group shadow-sm">
                     <img
                       src={oil.image}
@@ -110,10 +110,10 @@ export const IngredientesPage: React.FC<IngredientesPageProps> = ({ onOpenBookin
         </div>
       </div>
 
-      {/* DYNAMIC SHOWCASE CAROUSEL OF PRODUCTS & OILS */}
+
       <OilsCarouselSection onOpenBooking={onOpenBooking} />
 
-      {/* INTERACTIVE OIL SHOWCASE & RECOMMENDER TOOL */}
+
       <OilShowcase onOpenBooking={onOpenBooking} />
 
     </div>

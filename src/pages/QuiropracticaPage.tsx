@@ -13,11 +13,11 @@ interface QuiropracticaPageProps {
 export const QuiropracticaPage: React.FC<QuiropracticaPageProps> = ({ onOpenBooking }) => {
   return (
     <div className="pt-32 pb-24 bg-[#FAF8F5] min-h-screen space-y-16">
-      
-      {/* HERO BANNER */}
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -35 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -26,8 +26,8 @@ export const QuiropracticaPage: React.FC<QuiropracticaPageProps> = ({ onOpenBook
             className="lg:col-span-7 space-y-6"
           >
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#52331C] p-2 shrink-0 border border-[#8C5A3E]/30 shadow-sm flex items-center justify-center overflow-hidden">
-                <img src="/images/qmedic_logo.png" alt="Qmedic Logo" className="w-full h-full object-contain filter brightness-110" />
+              <div className="w-12 h-12 rounded-2xl shrink-0 border border-[#8C5A3E]/30 shadow-sm overflow-hidden">
+                <img src="/images/logo.png" alt="Qmedic Logo" className="w-full h-full object-cover" />
               </div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBEFEF] text-[#2C3E35] text-xs font-bold border border-[#2C3E35]/20">
                 <Award className="w-4 h-4 text-[#2C3E35]" />
@@ -43,7 +43,7 @@ export const QuiropracticaPage: React.FC<QuiropracticaPageProps> = ({ onOpenBook
               Tratamiento integral y especializado para hernia discal, dolor lumbar, rigidez cervical y desalineamiento vertebral. Recupera la libertad de movimiento de tu columna sin cirugía ni medicamentos agresivos.
             </p>
 
-            {/* Special offer callout */}
+
             <div className="p-6 rounded-2xl bg-white border border-[#EFECE6] shadow-sm space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase font-bold text-[#8C5A3E] tracking-wider">
@@ -96,7 +96,7 @@ export const QuiropracticaPage: React.FC<QuiropracticaPageProps> = ({ onOpenBook
         </div>
       </div>
 
-      {/* COMBINED THERAPIES ACCORDION */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection direction="up" className="text-center max-w-2xl mx-auto mb-10 space-y-3">
           <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#8C5A3E]">
@@ -115,7 +115,7 @@ export const QuiropracticaPage: React.FC<QuiropracticaPageProps> = ({ onOpenBook
         </div>
       </div>
 
-      {/* WHY CHOOSE QMEDIC */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection direction="scale" className="p-8 sm:p-12 rounded-3xl bg-white border border-[#EFECE6] shadow-sm space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">

@@ -27,8 +27,8 @@ export const Accordion: React.FC<AccordionProps> = ({ items, onSelectBook }) => 
             viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1.0] }}
             className={`border transition-all duration-300 rounded-2xl overflow-hidden ${
-              isOpen 
-                ? 'bg-white border-[#8C5A3E] shadow-md ring-1 ring-[#8C5A3E]/20' 
+              isOpen
+                ? 'bg-white border-[#8C5A3E] shadow-md ring-1 ring-[#8C5A3E]/20'
                 : 'bg-white/70 border-[#EFECE6] hover:border-[#DCD6CD] hover:bg-white'
             }`}
           >
@@ -70,7 +70,7 @@ export const Accordion: React.FC<AccordionProps> = ({ items, onSelectBook }) => 
                     <p className="text-sm text-[#2A2826]/80 leading-relaxed">
                       {item.fullDesc}
                     </p>
-                    
+
                     <div>
                       <h4 className="text-xs font-semibold uppercase tracking-wider text-[#8C5A3E] mb-2">
                         Beneficios Principales:

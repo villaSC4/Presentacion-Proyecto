@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Clock, Mail, ShieldCheck } from 'lucide-react';
 import { LOCATIONS, SOCIAL_LINKS } from '../../data/locations';
 
-// WhatsApp SVG
+
 const WhatsAppIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path fillRule="evenodd" clipRule="evenodd"
@@ -39,23 +39,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   return (
     <footer className="bg-[#3C2A1E] text-[#F7F3ED] relative overflow-hidden">
 
-      {/* Subtle top warm glow */}
+
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#B88A75]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#D4AF37]/8 rounded-full blur-3xl pointer-events-none" />
 
-      {/* MAIN FOOTER BODY */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-          {/* ── COL 1: BRAND + SOCIAL ── */}
+
           <div className="flex flex-col items-start gap-6">
-            {/* Circular Logo */}
+
             <div className="flex flex-col items-center gap-3 w-full">
-              <div className="w-28 h-28 rounded-full bg-[#52331C] border-4 border-[#B88A75]/50 shadow-xl flex items-center justify-center overflow-hidden">
+              <div className="w-28 h-28 rounded-full border-4 border-[#B88A75]/50 shadow-xl overflow-hidden">
                 <img
-                  src="/images/qmedic_logo.png"
+                  src="/images/logo.png"
                   alt="Relax by Qmedic"
-                  className="w-20 h-20 object-contain filter brightness-110"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-center">
@@ -68,13 +68,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               Un espacio de alivio, desconexión y bienestar holístico respaldado por más de 27 años de excelencia médica y quiropráctica de Qmedic en Lima.
             </p>
 
-            {/* Trust badge */}
+
             <div className="flex items-center gap-2 text-xs text-[#D4AF37] font-semibold">
               <ShieldCheck className="w-4 h-4 shrink-0" />
               <span>Garantía & Respaldo Médico Qmedic</span>
             </div>
 
-            {/* Social Icons Row */}
+
             <div>
               <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mb-3">Síguenos en:</p>
               <div className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          {/* ── COL 2: CONTÁCTANOS ── */}
+
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-[0.18em] text-[#CBB5A1] mb-6 pb-3 border-b border-white/10">
               Contáctanos
@@ -158,7 +158,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          {/* ── COL 3: SERVICIOS LIST ── */}
+
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-[0.18em] text-[#CBB5A1] mb-6 pb-3 border-b border-white/10">
               Nuestros Servicios
@@ -176,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         </div>
       </div>
 
-      {/* ── BOTTOM BAR ── */}
+
       <div className="border-t border-white/10 bg-[#2E1E14]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-white/50">
           <p>© {new Date().getFullYear()} Relax by Qmedic. Todos los derechos reservados. Diseñado para tu alivio y bienestar.</p>

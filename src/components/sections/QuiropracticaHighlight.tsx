@@ -13,8 +13,8 @@ export const QuiropracticaHighlight: React.FC<QuiropracticaHighlightProps> = ({ 
   return (
     <section className="py-20 bg-[#FAF8F5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* SPECIAL PROMO BANNER */}
+
+
         <motion.div
           initial={{ opacity: 0, y: 35, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -22,14 +22,14 @@ export const QuiropracticaHighlight: React.FC<QuiropracticaHighlightProps> = ({ 
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
           className="p-8 sm:p-10 rounded-3xl bg-[#4A3020] text-white border border-[#B88A75]/20 shadow-2xl mb-16 relative overflow-hidden"
         >
-          {/* Decorative background arch blur */}
+
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#B88A75]/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-[#52331C] p-1.5 shrink-0 border border-[#D4AF37]/30 flex items-center justify-center overflow-hidden">
-                  <img src="/images/qmedic_logo.png" alt="Qmedic Logo" className="w-full h-full object-contain filter brightness-110" />
+                <div className="w-11 h-11 rounded-xl shrink-0 overflow-hidden border border-[#D4AF37]/30">
+                  <img src="/images/logo.png" alt="Qmedic Logo" className="w-full h-full object-cover" />
                 </div>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37] text-[#4A3020] text-xs font-bold uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5" />
@@ -55,7 +55,7 @@ export const QuiropracticaHighlight: React.FC<QuiropracticaHighlightProps> = ({ 
               </div>
             </div>
 
-            {/* PRICE & CTA SIDE */}
+
             <div className="lg:col-span-4 bg-white/10 p-6 rounded-2xl border border-white/15 text-center space-y-4">
               <span className="text-xs uppercase tracking-widest font-semibold text-white/70">
                 Inversión Promocional
@@ -86,7 +86,7 @@ export const QuiropracticaHighlight: React.FC<QuiropracticaHighlightProps> = ({ 
           </div>
         </motion.div>
 
-        {/* COMBINED THERAPIES ACCORDION SECTION */}
+
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#8C5A3E]">

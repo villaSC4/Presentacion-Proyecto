@@ -7,8 +7,8 @@ export const AboutSection: React.FC = () => {
     <section className="py-20 bg-white border-y border-[#EFECE6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* IMAGE SIDE WITH ORGANIC ARCH SHAPE */}
+
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -24,7 +24,7 @@ export const AboutSection: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C3E35]/70 via-transparent to-transparent" />
-                
+
                 <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
                   <span className="text-xs uppercase tracking-widest font-semibold text-[#D4AF37]">
                     Sede Surco Chacarilla
@@ -35,10 +35,10 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* FLOATING SEAL */}
+
               <div className="absolute -bottom-6 -right-4 bg-[#52331C] text-white p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-[#8C5A3E]/40">
-                <div className="w-10 h-10 rounded-xl bg-[#2A2826] p-1.5 flex items-center justify-center shrink-0 border border-[#D4AF37]/30">
-                  <img src="/images/qmedic_logo.png" alt="Qmedic Seal" className="w-full h-full object-contain filter brightness-110" />
+                <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-[#D4AF37]/30">
+                  <img src="/images/logo.png" alt="Qmedic Seal" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-xs">
                   <p className="font-bold uppercase tracking-wider text-[#D4AF37]">27+ Años</p>
@@ -48,7 +48,7 @@ export const AboutSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* TEXT CONTENT */}
+
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}

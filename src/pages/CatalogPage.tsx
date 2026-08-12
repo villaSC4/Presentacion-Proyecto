@@ -43,8 +43,8 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
   return (
     <div className="pt-32 pb-24 bg-[#F7F3ED] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
-        {/* Header */}
+
+
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#B88A75]">
             Catálogo Completo de Masajes & Terapias
@@ -57,7 +57,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
           </p>
         </AnimatedSection>
 
-        {/* Category Tabs */}
+
         <AnimatedSection direction="scale" className="flex justify-center">
           <Tabs
             tabs={categoryTabs}
@@ -66,7 +66,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
           />
         </AnimatedSection>
 
-        {/* V-CONIC BANNER NOTICE FOR DETOX */}
+
         {activeCategory === 'detox' && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -87,14 +87,14 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
           </motion.div>
         )}
 
-        {/* Services Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredServices.map((service, index) => {
               const currentDuration = selectedDurations[service.id] || service.options[0].duration;
 
               return (
-                // OUTER: bidirectional scroll-reveal (whileInView)
+
                 <motion.div
                   key={service.id + '-scroll'}
                   initial={{ opacity: 0, y: 55 }}
@@ -102,7 +102,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                   viewport={{ once: false, amount: 0.08 }}
                   transition={{ duration: 0.55, delay: (index % 3) * 0.12, ease: [0.215, 0.61, 0.355, 1.0] }}
                 >
-                  {/* INNER: AnimatePresence filter transitions + hover lift */}
+
                   <motion.div
                     key={service.id}
                     layout
@@ -114,7 +114,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                     className="bg-white rounded-3xl p-6 border border-[#EFE7DD] shadow-xs flex flex-col justify-between cursor-default"
                   >
                   <div>
-                    {/* Image */}
+
                     <div className="arch-top overflow-hidden h-48 mb-5 bg-[#F7F3ED] relative border border-[#CBB5A1]/30">
                       <img
                         src={service.image}
@@ -133,7 +133,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                       )}
                     </div>
 
-                    {/* Title & Desc */}
+
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#B88A75]">
                       {service.categoryLabel}
                     </span>
@@ -147,7 +147,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                       {service.description}
                     </p>
 
-                    {/* Duration Toggles */}
+
                     <div className="mt-5 p-1 rounded-full bg-[#EFE7DD] flex items-center gap-1 border border-[#CBB5A1]/40">
                       {service.options.map((opt) => {
                         const isActive = currentDuration === opt.duration;
@@ -167,7 +167,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                       })}
                     </div>
 
-                    {/* Benefits List */}
+
                     <div className="mt-5 space-y-2">
                       <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#B88A75]">
                         Beneficios Clave:
@@ -183,7 +183,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                     </div>
                   </div>
 
-                  {/* Action Button */}
+
                   <div className="mt-6 pt-4 border-t border-[#EFE7DD]">
                     <Button
                       variant="clay"

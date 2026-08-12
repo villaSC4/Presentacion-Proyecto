@@ -12,7 +12,7 @@ import { QuiropracticaPage } from './pages/QuiropracticaPage';
 import { IngredientesPage } from './pages/IngredientesPage';
 import { ContactoPage } from './pages/ContactoPage';
 
-// Scroll to top helper component
+
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -21,7 +21,7 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
-// Page Transition Wrapper
+
 const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <motion.div
     initial={{ opacity: 0, y: 15 }}
@@ -54,11 +54,11 @@ export const AppContent: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-[#2A2826] font-sans antialiased selection:bg-[#8C5A3E] selection:text-white">
       <ScrollToTop />
-      
-      {/* Sticky Glass Navbar */}
+
+
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 
-      {/* Main Page Content with Animated Page Transitions */}
+
       <main className="flex-grow">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
@@ -125,17 +125,17 @@ export const AppContent: React.FC = () => {
         </AnimatePresence>
       </main>
 
-      {/* Rich Footer */}
+
       <Footer onOpenBooking={() => handleOpenBooking()} />
 
-      {/* Stepped Booking Modal */}
+
       <BookingModal
         isOpen={isBookingOpen}
         onClose={handleCloseBooking}
         initialServiceId={initialServiceId}
       />
 
-      {/* Floating CTA & WhatsApp Pulsing Button */}
+
       <FloatingCTA onOpenBooking={() => handleOpenBooking()} />
     </div>
   );

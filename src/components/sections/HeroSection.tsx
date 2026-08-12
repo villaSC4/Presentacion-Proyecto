@@ -7,7 +7,7 @@ interface HeroSectionProps {
   onOpenBooking: () => void;
 }
 
-// Rotating phrases — short, wellness-themed, change every 6s
+
 const HERO_PHRASES = [
   { line1: 'Sana tu cuerpo,', line2: 'libera tu tensión.' },
   { line1: 'Masajes que van', line2: 'más allá del dolor.' },
@@ -22,7 +22,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   const [phraseIndex, setPhraseIndex] = useState<number>(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Auto-rotate phrase every 6 seconds
+
   useEffect(() => {
     const interval = setInterval(() => {
       setPhraseIndex((prev) => (prev + 1) % HERO_PHRASES.length);
@@ -51,8 +51,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#2A2826] text-white pt-24 pb-16">
-      
-      {/* FULLSCREEN BACKGROUND VIDEO LOOP */}
+
+
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
           ref={videoRef}
@@ -65,15 +65,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           className="w-full h-full object-cover scale-105 filter brightness-90 saturate-[1.1]"
         />
 
-        {/* LUXURY DARK WARM GRADIENT OVERLAYS */}
+
         <div className="absolute inset-0 bg-gradient-to-t from-[#2A2826] via-black/60 to-black/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
-        
-        {/* Subtle Ambient Radial Warm Glows */}
+
+
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#8C5A3E]/20 rounded-full blur-3xl pointer-events-none" />
       </div>
 
-      {/* DISCREET FLOATING VIDEO CONTROLS */}
+
       <div className="absolute bottom-8 right-8 z-30 flex items-center gap-2">
         <button
           onClick={togglePlay}
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         </button>
       </div>
 
-      {/* CENTRAL HERO CONTENT */}
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center my-auto">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -99,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           transition={{ duration: 0.9, ease: [0.215, 0.61, 0.355, 1.0] }}
           className="space-y-8"
         >
-          {/* ROTATING HEADLINE — changes every 6s with fade + slide */}
+
           <div className="min-h-[160px] sm:min-h-[200px] flex flex-col items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.h1
@@ -117,7 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </AnimatePresence>
           </div>
 
-          {/* Phrase progress dots */}
+
           <div className="flex items-center justify-center gap-2">
             {HERO_PHRASES.map((_, idx) => (
               <button
@@ -133,7 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             ))}
           </div>
 
-          {/* ACTION BUTTONS */}
+
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
             <Button
               variant="clay"
@@ -154,10 +154,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </a>
           </div>
 
-          {/* BOTTOM FEATURE BADGES — vertical cards, icon top + text below */}
+
           <div className="pt-6 grid grid-cols-3 gap-5 max-w-2xl mx-auto">
 
-            {/* Badge 1 — Qmedic */}
+
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -168,8 +168,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0 }}
                 className="flex flex-col items-center text-center gap-3 p-5 rounded-2xl bg-[#EDE0D4]/75 backdrop-blur-md border border-[#CBB5A1]/50 shadow-md"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#CBB5A1]/50 p-2 flex items-center justify-center border border-[#B88A75]/30 overflow-hidden">
-                  <img src="/images/qmedic_logo.png" alt="Qmedic" className="w-full h-full object-contain filter brightness-90" />
+                <div className="w-14 h-14 rounded-2xl overflow-hidden border border-[#B88A75]/30">
+                  <img src="/images/logo.png" alt="Qmedic" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="font-display font-bold text-[#4A3E3D] text-sm leading-tight">Respaldo Qmedic</p>
@@ -178,7 +178,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </motion.div>
             </motion.div>
 
-            {/* Badge 2 — V-Conic */}
+
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -199,7 +199,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </motion.div>
             </motion.div>
 
-            {/* Badge 3 — Botánico */}
+
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -222,7 +222,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
           </div>
 
-          {/* SCROLL DOWN INDICATOR */}
+
           <div className="pt-4 flex justify-center">
             <a
               href="#catalogo"

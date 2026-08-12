@@ -9,7 +9,7 @@ interface OilsCarouselSectionProps {
   onOpenBooking: (serviceId?: string) => void;
 }
 
-// Shared viewport trigger config for bidirectional scroll reveal
+
 const viewport = { once: false, amount: 0.15 };
 const ease = [0.215, 0.61, 0.355, 1.0] as const;
 
@@ -31,7 +31,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
       transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       className="py-24 text-white relative overflow-hidden transition-colors duration-700"
     >
-      {/* Dynamic Background Light Rings & Glows */}
+
       <motion.div
         key={`glow-${currentProduct.id}`}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -46,7 +46,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header — slides DOWN into view from above on scroll */}
+
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
           </p>
         </motion.div>
 
-        {/* MAIN SHOWCASE DISPLAY CARD — slides UP from below on scroll */}
+
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -75,7 +75,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
           className="relative max-w-5xl mx-auto"
         >
 
-          {/* Main Card Container */}
+
           <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl overflow-hidden min-h-[520px] flex items-center">
 
             <AnimatePresence mode="wait">
@@ -88,12 +88,12 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                 className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full"
               >
 
-                {/* LEFT: PRODUCT IMAGE WITH 3D FLOAT & ROTATION */}
+
                 <div className="lg:col-span-6 relative flex items-center justify-center">
-                  {/* Organic Arch Soft Backdrop Circle */}
+
                   <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-white/10 border border-white/20 absolute -z-10 shadow-inner" />
 
-                  {/* Main Animated Product Image */}
+
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: 30, rotate: -4 }}
                     animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
@@ -114,14 +114,14 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                       className="max-h-[360px] sm:max-h-[420px] w-auto object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)]"
                     />
 
-                    {/* Floating Product Tag */}
+
                     <div className="absolute top-2 right-2 bg-white/90 text-[#2A2826] text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-white/60">
                       {currentProduct.tag}
                     </div>
                   </motion.div>
                 </div>
 
-                {/* RIGHT: TEXT CONTENT & SPECIFICATIONS */}
+
                 <div className="lg:col-span-6 space-y-6 text-left">
 
                   <div className="space-y-2">
@@ -162,7 +162,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                     {currentProduct.description}
                   </motion.p>
 
-                  {/* Highlights Grid */}
+
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                     </div>
                   </motion.div>
 
-                  {/* Action CTA */}
+
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
           </div>
 
-          {/* ARROW NAVIGATION BUTTONS */}
+
           <button
             onClick={handlePrev}
             className="absolute top-1/2 -left-4 sm:-left-6 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#2A2826] shadow-2xl border border-[#EFECE6] flex items-center justify-center hover:scale-110 transition-all cursor-pointer z-20"
@@ -229,7 +229,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
 
         </motion.div>
 
-        {/* BOTTOM SELECTOR TAB BAR — slides UP with small stagger delay */}
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
