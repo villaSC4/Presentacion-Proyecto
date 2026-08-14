@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import { Sparkles, Activity, ShieldCheck, Droplets, ArrowRight } from 'lucide-react';
+import { Sparkles, Activity, Droplets, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const CategoryGrid: React.FC = () => {
@@ -27,17 +27,6 @@ export const CategoryGrid: React.FC = () => {
       badge: 'Exclusivo',
       link: '/servicios?cat=detox',
       image: '/images/massage_detox.png'
-    },
-    {
-      id: 'quiropractica',
-      title: 'Quiropráctica & Médica',
-      subtitle: 'Centro Especializado Qmedic',
-      desc: 'Alineamiento vertebral, tracción discal y fisioterapia para la salud de la columna.',
-      icon: ShieldCheck,
-      color: 'bg-[#FFFBEB] text-[#D4AF37]',
-      badge: '50% OFF 1ra Cita',
-      link: '/quiropractica',
-      image: '/images/quiropractica.png'
     },
     {
       id: 'ingredientes',
@@ -69,7 +58,7 @@ export const CategoryGrid: React.FC = () => {
         </AnimatedSection>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {categories.map((cat, index) => {
             const Icon = cat.icon;
             return (

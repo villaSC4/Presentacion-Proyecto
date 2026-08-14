@@ -20,16 +20,28 @@ const InstagramIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
   </svg>
 );
 
+const FacebookIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
+
+const TikTokIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+  </svg>
+);
+
 const SERVICES_LIST = [
+  'Dream Relax',
+  'Relax Reset',
+  'Total Reset',
   'Masaje Descontracturante',
-  'Masaje Detox V-Conic',
-  'Quiropráctica Avanzada',
-  'Fisioterapia & Alineamiento',
-  'Acupuntura Terapéutica',
-  'Aceites Botánicos 100% Puros',
-  'Evaluación Postural Qmedic',
-  'Masaje de Relajación Profunda',
-  'Tratamiento de Columna',
+  'Descontracturante Superior',
+  'Descontracturante Inferior',
+  'Detox Muscular',
+  'Detox Muscular Superior',
+  'Detox Muscular Inferior',
 ];
 
 interface FooterProps {
@@ -89,13 +101,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   <InstagramIcon className="w-4 h-4" />
                 </a>
                 <a
-                  href={SOCIAL_LINKS.instagramQmedic.url}
+                  href={SOCIAL_LINKS.facebook.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 hover:bg-[#B88A75] hover:border-[#B88A75] flex items-center justify-center transition-all text-white"
-                  title={SOCIAL_LINKS.instagramQmedic.handle}
+                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 hover:bg-[#1877F2] hover:border-[#1877F2] flex items-center justify-center transition-all text-white"
+                  title={SOCIAL_LINKS.facebook.handle}
                 >
-                  <InstagramIcon className="w-4 h-4" />
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.tiktok.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 hover:bg-[#010101] hover:border-white/50 flex items-center justify-center transition-all text-white"
+                  title={SOCIAL_LINKS.tiktok.handle}
+                >
+                  <TikTokIcon className="w-4 h-4" />
                 </a>
                 <a
                   href={SOCIAL_LINKS.whatsappPrimary.waUrl}
@@ -137,16 +158,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               ))}
 
               <div className="border-t border-white/10 pt-4 space-y-3">
-                <div className="flex items-center gap-2 text-xs text-white/65">
-                  <Clock className="w-4 h-4 text-[#B88A75] shrink-0" />
-                  <div>
+                <div className="flex items-start gap-2 text-xs text-white/65">
+                  <Clock className="w-4 h-4 text-[#B88A75] shrink-0 mt-0.5" />
+                  <div className="space-y-1">
                     <p className="font-semibold text-white/85">Horario de Atención</p>
-                    <p>Lun – Sáb · 9:00 am – 7:30 pm</p>
+                    <div className="grid grid-cols-[auto_1fr] gap-x-2 gap-y-1 text-[11px]">
+                      <span>Lun – Sáb:</span>
+                      <span>9:00 am – 6:00 pm (Último turno: 5pm)</span>
+                      <span className="text-[#B88A75] font-semibold">Jueves:</span>
+                      <span className="text-[#B88A75] font-semibold">9:00 am – 2:00 pm (Último turno: 1pm)</span>
+                      <span className="col-span-2 text-white/40">Dom: Cerrado / Previa reserva</span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-white/65">
                   <Mail className="w-4 h-4 text-[#B88A75] shrink-0" />
-                  <span>relax@qmedic.pe</span>
+                  <a href="mailto:relax.alivioybienestar@gmail.com" className="hover:text-white transition-colors break-all">
+                    relax.alivioybienestar@gmail.com
+                  </a>
                 </div>
               </div>
 

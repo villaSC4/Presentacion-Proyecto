@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Calendar } from 'lucide-react';
 import { MASSAGE_SERVICES } from '../../data/services';
 import { Button } from '../ui/Button';
@@ -11,6 +11,7 @@ interface FeaturedServicesProps {
 
 export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectService }) => {
 
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [selectedDurations, setSelectedDurations] = useState<Record<string, '50 min' | '80 min'>>({
     'dream-relax': '80 min',
     'total-reset': '50 min',
@@ -65,24 +66,46 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                 transition={{ duration: 0.6, delay: index * 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="bg-[#FAF8F5] rounded-3xl p-6 border border-[#EFECE6] flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group"
+                onMouseEnter={() => setHoveredCard(service.id)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
 
-                {service.badge && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="px-3 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#8C5A3E] text-white shadow-xs">
-                      {service.badge}
-                    </span>
-                  </div>
-                )}
 
                 <div>
 
-                  <div className="arch-top overflow-hidden h-44 mb-5 border border-white shadow-sm bg-white">
+                  <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-5 shadow-md group-hover:shadow-xl transition-shadow duration-300">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
+                    <AnimatePresence>
+                      {service.videoUrl && hoveredCard === service.id && (
+                        <motion.video
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.5 }}
+                          src={service.videoUrl}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      )}
+                    </AnimatePresence>
+                    {/* Gradient overlay premium */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    {/* Badge de duración flotante */}
+                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#4A3E3D] text-[10px] font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                      {currentDuration}
+                    </span>
+                    {service.badge && (
+                      <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#8C5A3E] text-white shadow-sm">
+                        {service.badge}
+                      </span>
+                    )}
                   </div>
 
 

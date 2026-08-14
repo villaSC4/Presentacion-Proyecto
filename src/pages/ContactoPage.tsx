@@ -99,9 +99,28 @@ export const ContactoPage: React.FC<ContactoPageProps> = ({ onOpenBooking }) => 
                     <div className="w-8 h-8 rounded-xl bg-[#F6F0EC] flex items-center justify-center shrink-0">
                       <Clock className="w-4 h-4 text-[#8C5A3E]" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-[#2A2826] text-xs">Horario</p>
-                      <p className="text-xs">{loc.hours}</p>
+                    <div className="w-full">
+                      <p className="font-semibold text-[#2A2826] text-xs mb-2">Horario de Atención</p>
+                      <div className="space-y-2">
+                        <div className="bg-[#FAF8F5] border border-[#EFECE6] rounded-xl p-2.5 text-[11px]">
+                          <div className="flex justify-between font-bold text-[#2A2826] mb-1">
+                            <span>Lunes a Sábado</span>
+                            <span>9:00 am - 6:00 pm</span>
+                          </div>
+                          <p className="text-[#6B6763]">Último turno: 5:00 pm</p>
+                        </div>
+                        <div className="bg-[#F6F0EC] border border-[#EFECE6] rounded-xl p-2.5 text-[11px] relative overflow-hidden">
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8C5A3E]"></div>
+                          <div className="flex justify-between font-bold text-[#2A2826] mb-1">
+                            <span>Jueves (Especial)</span>
+                            <span>9:00 am - 2:00 pm</span>
+                          </div>
+                          <p className="text-[#6B6763]">Último turno: 1:00 pm</p>
+                        </div>
+                        <div className="text-[11px] text-[#8C5A3E] font-semibold pt-1">
+                          Domingos: Cerrado / Previa reserva
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -145,30 +164,35 @@ export const ContactoPage: React.FC<ContactoPageProps> = ({ onOpenBooking }) => 
               <h3 className="font-display font-bold text-base text-[#2A2826]">Redes Sociales</h3>
               <div className="space-y-2">
                 {[
-                  { label: '@relax.alivioybienestar', url: 'https://instagram.com/relax.alivioybienestar' },
-                  { label: '@qmedic.peru', url: 'https://instagram.com/qmedic.peru' },
+                  { label: '@relax.alivioybienestar', url: 'https://instagram.com/relax.alivioybienestar', icon: 'IG' },
+                  { label: 'Relax - Alivio y Bienestar', url: 'https://facebook.com/relax.alivioybienestar', icon: 'FB' },
+                  { label: '@relax.alivioybienestar', url: 'https://tiktok.com/@relax.alivioybienestar', icon: 'TK' },
                 ].map((social) => (
                   <a
-                    key={social.label}
+                    key={social.label + social.icon}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 rounded-2xl bg-[#FAF8F5] border border-[#EFECE6] hover:border-[#B88A75] hover:bg-[#F6F0EC] transition-all text-xs font-semibold text-[#4A3E3D]"
                   >
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center shrink-0">
-                      <span className="text-white text-[8px] font-bold">IG</span>
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-white text-[8px] font-bold ${
+                      social.icon === 'IG' ? 'bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'
+                      : social.icon === 'FB' ? 'bg-[#1877F2]'
+                      : 'bg-[#010101]'
+                    }`}>
+                      {social.icon}
                     </div>
                     {social.label}
                   </a>
                 ))}
                 <a
-                  href="mailto:relax@qmedic.pe"
-                  className="flex items-center gap-3 p-3 rounded-2xl bg-[#FAF8F5] border border-[#EFECE6] hover:border-[#B88A75] transition-all text-xs font-semibold text-[#4A3E3D]"
+                  href="mailto:relax.alivioybienestar@gmail.com"
+                  className="flex items-center gap-3 p-3 rounded-2xl bg-[#FAF8F5] border border-[#EFECE6] hover:border-[#B88A75] transition-all text-xs font-semibold text-[#4A3E3D] break-all"
                 >
                   <div className="w-6 h-6 rounded-full bg-[#F6F0EC] flex items-center justify-center shrink-0">
                     <Mail className="w-3.5 h-3.5 text-[#8C5A3E]" />
                   </div>
-                  relax@qmedic.pe
+                  relax.alivioybienestar@gmail.com
                 </a>
               </div>
             </motion.div>

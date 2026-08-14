@@ -8,7 +8,6 @@ import { FloatingCTA } from './components/ui/FloatingCTA';
 
 import { Home } from './pages/Home';
 import { CatalogPage } from './pages/CatalogPage';
-import { QuiropracticaPage } from './pages/QuiropracticaPage';
 import { IngredientesPage } from './pages/IngredientesPage';
 import { ContactoPage } from './pages/ContactoPage';
 
@@ -86,22 +85,6 @@ export const AppContent: React.FC = () => {
               element={
                 <PageTransition>
                   <CatalogPage onSelectService={(id) => handleOpenBooking(id)} />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/quiropractica"
-              element={
-                <PageTransition>
-                  <QuiropracticaPage onOpenBooking={() => handleOpenBooking()} />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/qmedic"
-              element={
-                <PageTransition>
-                  <QuiropracticaPage onOpenBooking={() => handleOpenBooking()} />
                 </PageTransition>
               }
             />

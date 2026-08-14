@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Feather } from 'lucide-react';
+import portadaImg from '../../assets/img/PORTADA.jpg';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ export const AboutSection: React.FC = () => {
             <div className="relative mx-auto max-w-sm sm:max-w-md">
               <div className="rounded-3xl overflow-hidden shadow-xl border border-[#EFECE6] aspect-[4/5] relative">
                 <img
-                  src="/images/spa_ambience.png"
+                  src={portadaImg}
                   alt="Filosofía Relax by Qmedic"
                   className="w-full h-full object-cover"
                 />

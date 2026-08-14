@@ -18,6 +18,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
 
   const [activeCategory, setActiveCategory] = useState<string>(catParam);
   const [selectedDurations, setSelectedDurations] = useState<Record<string, '50 min' | '80 min'>>({});
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   useEffect(() => {
     if (catParam) {
@@ -111,23 +112,47 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
                     whileHover={{ y: -7, scale: 1.02, boxShadow: '0 22px 44px rgba(184,138,117,0.20)' }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="bg-white rounded-3xl p-6 border border-[#EFE7DD] shadow-xs flex flex-col justify-between cursor-default"
+                    className="bg-white rounded-3xl p-6 border border-[#EFE7DD] shadow-xs flex flex-col justify-between cursor-default group"
+                    onMouseEnter={() => setHoveredCard(service.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
                   >
                   <div>
 
-                    <div className="arch-top overflow-hidden h-48 mb-5 bg-[#F7F3ED] relative border border-[#CBB5A1]/30">
+                    <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-5 shadow-md group-hover:shadow-xl transition-shadow duration-300">
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
+                      <AnimatePresence>
+                        {service.videoUrl && hoveredCard === service.id && (
+                          <motion.video
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                            src={service.videoUrl}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                        )}
+                      </AnimatePresence>
+                      {/* Gradient overlay premium */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      {/* Badge de duración flotante */}
+                      <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#4A3E3D] text-[10px] font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                        {currentDuration}
+                      </span>
                       {service.badge && (
-                        <span className="absolute top-3 right-3 px-3 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#B88A75] text-white shadow-sm">
+                        <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#B88A75] text-white shadow-sm">
                           {service.badge}
                         </span>
                       )}
                       {service.techTag && (
-                        <span className="absolute bottom-3 left-3 px-3 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#3D4A41] text-white shadow-sm">
+                        <span className="absolute bottom-3 left-3 px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded-full bg-[#3D4A41] text-white shadow-sm">
                           {service.techTag}
                         </span>
                       )}

@@ -14,6 +14,7 @@ export interface ServiceItem {
   options: ServiceOption[];
   badge?: string;
   image: string;
+  videoUrl?: string;
   techTag?: string;
 }
 
@@ -32,7 +33,8 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     badge: 'Popular',
-    image: '/images/dream_relax.png'
+    image: '/images/dream_relax.png',
+    videoUrl: '/video/DreamRelax.mp4'
   },
   {
     id: 'total-reset',
@@ -47,20 +49,22 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     badge: 'Recomendado',
-    image: '/images/total_relax.png'
+    image: '/images/total_relax.png',
+    videoUrl: '/video/TotalReset.mp4'
   },
   {
     id: 'relax-reset',
     title: 'Relax Reset',
-    subtitle: 'Tratamiento localizado para pies y piernas cansadas',
+    subtitle: 'Maniobras profundas + Reflexología Podal',
     category: 'relajantes',
     categoryLabel: 'Masajes Relajantes',
-    description: 'Terapia focalizada en miembros inferiores que drenan líquidos retendidos y desinflaman articulaciones y músculos tras jornadas prolongadas de pie o camina.',
-    benefits: ['Sensación inmediata de ligereza', 'Mejora retorno venoso', 'Desinflamación de tobillos y gemelos', 'Alivio de fatiga podal'],
+    description: 'Combina maniobras de presión profunda descontracturante con reflexología podal especializada. Libera bloqueos neuromusculares y reactiva la energía vital desde los pies.',
+    benefits: ['Alivio de contracturas profundas', 'Estimulación reflexológica podal', 'Liberación de bloqueos energéticos', 'Sedación del sistema nervioso'],
     options: [
       { duration: '50 min', price: 120 }
     ],
-    image: '/images/relax_reset.jpg'
+    image: '/images/relax_reset.jpg',
+    videoUrl: '/video/Relax_Reset.mp4'
   },
 
 
@@ -77,7 +81,8 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
     ],
     badge: 'Tecnología Exclusiva',
     techTag: 'Tecnología V-Conic Sin Dolor',
-    image: '/images/detox_muscular.png'
+    image: '/images/detox_muscular.png',
+    videoUrl: '/video/DetoxMuscular.mp4'
   },
   {
     id: 'detox-superior',
@@ -92,7 +97,8 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     techTag: 'Tecnología V-Conic Sin Dolor',
-    image: '/images/detox_muscular_superior.png'
+    image: '/images/detox_muscular_superior.png',
+    videoUrl: '/video/DetoxMuscularSuperior.mp4'
   },
   {
     id: 'detox-inferior',
@@ -107,51 +113,55 @@ export const MASSAGE_SERVICES: ServiceItem[] = [
       { duration: '80 min', price: 150 }
     ],
     techTag: 'Tecnología V-Conic Sin Dolor',
-    image: '/images/detox_muscular_inferior.png'
+    image: '/images/detox_muscular_inferior.png',
+    videoUrl: '/video/DetoxMuscularInferior.mp4'
   },
 
 
   {
     id: 'bambu-herramientas',
-    title: 'Descontracturante con Cañas de Bambú',
-    subtitle: 'Maderoterapia & Cañas de Bambú Térmicas',
+    title: 'Masaje Descontracturante',
+    subtitle: 'Intensidad profunda + Herramientas Terapéuticas',
     category: 'descontracturantes',
     categoryLabel: 'Descontracturantes Especiales',
-    description: 'Técnica milenaria combinada con herramientas ergonómicas de madera natural. Las cañas de bambú se deslizan a presión sostenida para reactivar el riego sanguíneo.',
-    benefits: ['Moldeamiento y tonificación', 'Reactiva la microcirculación', 'Efecto sedante profundo', 'Descompresión de fascias'],
+    description: 'Masaje de alta intensidad que combina técnicas manuales de presión profunda con herramientas terapéuticas especializadas para deshacer contracturas severas y reactivar el flujo muscular.',
+    benefits: ['Descontracturación profunda y duradera', 'Reactiva la microcirculación', 'Efecto sedante profundo', 'Descompresión de fascias y tejidos'],
     options: [
       { duration: '50 min', price: 120 },
       { duration: '80 min', price: 150 }
     ],
-    badge: 'Terapia Holística',
-    image: '/images/masaje_descontracturante.jpg'
+    badge: 'Alta Intensidad',
+    image: '/images/masaje_descontracturante.jpg',
+    videoUrl: '/video/Masaje_Descontracturante.mp4'
   },
   {
     id: 'trend-superior',
-    title: 'Trend Superior',
-    subtitle: 'Tratamiento localizado de alta eficacia en tronco superior',
+    title: 'Descontracturante Superior',
+    subtitle: 'Cuello, hombros, espalda y brazos',
     category: 'descontracturantes',
     categoryLabel: 'Descontracturantes Especiales',
-    description: 'Combinación vanguardista de digitopresión, pases miofasciales y aceites botánicos termoactivos para liberar el área torácica y cervical.',
-    benefits: ['Apertura pectoral y respiratoria', 'Disminución del estrés cervical', 'Flexibilidad articular'],
+    description: 'Tratamiento descontracturante focalizado en la zona superior del cuerpo: cuello, hombros, espalda alta y brazos. Libera tensiones acumuladas por el estrés postural y trabajo digital.',
+    benefits: ['Alivio de rigidez cervical y trapecio', 'Liberación de hombros y escápulas', 'Apertura pectoral y respiratoria', 'Mejora de la postura superior'],
     options: [
       { duration: '50 min', price: 120 },
       { duration: '80 min', price: 150 }
     ],
-    image: '/images/trend_superior.png'
+    image: '/images/trend_superior.png',
+    videoUrl: '/video/Descontracturante_Superior.mp4'
   },
   {
     id: 'trend-inferior-reflexologia',
-    title: 'Trend Inferior + Reflexología',
-    subtitle: 'Liberación lumbar y podal coordinada',
+    title: 'Descontracturante Inferior',
+    subtitle: 'Zona lumbar, piernas, pantorrillas, pies + Reflexología Podal',
     category: 'descontracturantes',
     categoryLabel: 'Descontracturantes Especiales',
-    description: 'Acción sinérgica entre masaje descontracturante intenso en tren inferior y estimulación reflexológica especializada en las plantas de los pies.',
-    benefits: ['Equilibrio neuro-muscular', 'Desinflamación plantar', 'Restablecimiento de la zancada suave'],
+    description: 'Descontracturación profunda focalizada en la zona lumbar, piernas, pantorrillas y pies, complementada con reflexología podal para liberar tensiones acumuladas en el tren inferior.',
+    benefits: ['Descompresión de zona lumbar', 'Alivio de piernas y pantorrillas', 'Estimulación reflexológica podal', 'Eliminación de ácido láctico'],
     options: [
       { duration: '50 min', price: 120 },
       { duration: '80 min', price: 150 }
     ],
-    image: '/images/trend_inferior_reflexologia.png'
+    image: '/images/trend_inferior_reflexologia.png',
+    videoUrl: '/video/Descontracturante_Inferior.mp4'
   }
 ];

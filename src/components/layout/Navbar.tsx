@@ -26,8 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
   const navLinks = [
     { label: 'Inicio', path: '/' },
-    { label: 'Masajes & Catálogo', path: '/servicios' },
-    { label: 'Quiropráctica Qmedic', path: '/quiropractica' },
+    { label: 'Servicios', path: '/servicios' },
     { label: 'Aceites Naturales', path: '/ingredientes' },
     { label: 'Contacto', path: '/contacto' },
   ];

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, ShieldCheck, ArrowRight, HeartPulse, Play, Pause, Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import { Button } from '../ui/Button';
+import qmedicLogo from '../../assets/img/qmedic_logo.png';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -66,8 +67,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         />
 
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2A2826] via-black/60 to-black/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
 
 
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#8C5A3E]/20 rounded-full blur-3xl pointer-events-none" />
@@ -168,7 +169,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 className="flex flex-col items-center text-center gap-3 p-5 rounded-2xl bg-[#EDE0D4]/75 backdrop-blur-md border border-[#CBB5A1]/50 shadow-md"
               >
                 <div className="w-14 h-14 rounded-2xl overflow-hidden border border-[#B88A75]/30">
-                  <img src="/images/logo.png" alt="Qmedic" className="w-full h-full object-cover" />
+                  <img src={qmedicLogo} alt="Qmedic" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="font-display font-bold text-[#4A3E3D] text-sm leading-tight">Respaldo Qmedic</p>

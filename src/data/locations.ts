@@ -17,18 +17,8 @@ export const LOCATIONS: LocationItem[] = [
     reference: 'A 2 cuadras del Centro Comercial Chacarilla',
     phoneDisplay: '912 680 658',
     whatsappNumber: '51912680658',
-    hours: 'Lunes a Sábado: 8:00 am - 8:00 pm',
+    hours: 'Lun-Sáb: 9am - 6pm | Jueves: 9am - 2pm',
     mapEmbedUrl: 'https://maps.google.com/?q=Chacarilla+Surco+Lima'
-  },
-  {
-    id: 'qmedic-lima',
-    name: 'Sede Central Qmedic Lima',
-    address: 'Av. Javier Prado Este 2455, San Borja / Lima',
-    reference: 'Frente a la Estación de la Cultura',
-    phoneDisplay: '925 602 615',
-    whatsappNumber: '51925602615',
-    hours: 'Lunes a Sábado: 8:30 am - 7:30 pm',
-    mapEmbedUrl: 'https://maps.google.com/?q=San+Borja+Lima'
   }
 ];
 
@@ -40,6 +30,14 @@ export const SOCIAL_LINKS = {
   instagramQmedic: {
     handle: '@qmedic.peru',
     url: 'https://instagram.com/qmedic.peru'
+  },
+  facebook: {
+    handle: 'Relax - Alivio y Bienestar',
+    url: 'https://www.facebook.com/profile.php?id=61591889185575&locale=es_LA'
+  },
+  tiktok: {
+    handle: '@relax.alivioybienestar',
+    url: 'https://www.tiktok.com/@relax.alivioybienestar'
   },
   whatsappPrimary: {
     number: '912 680 658',

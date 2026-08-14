@@ -28,10 +28,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   const navItems = [
     { label: 'Inicio', path: '/' },
-    { label: 'Catálogo de Masajes', path: '/servicios' },
-    { label: 'Centro Quiropráctico Qmedic', path: '/quiropractica' },
-    { label: 'Ingredientes Naturales', path: '/ingredientes' },
-    { label: 'Contacto & Sedes', path: '/contacto' },
+    { label: 'Servicios', path: '/servicios' },
+    { label: 'Aceites Naturales', path: '/ingredientes' },
+    { label: 'Contacto', path: '/contacto' },
   ];
 
   return (
