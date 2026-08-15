@@ -23,6 +23,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onSelectService }) => 
   useEffect(() => {
     if (catParam) {
       setActiveCategory(catParam);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [catParam]);
 

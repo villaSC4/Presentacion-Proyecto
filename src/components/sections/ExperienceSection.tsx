@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Sparkles, CheckCircle2, Play } from 'lucide-react';
 
 export const ExperienceSection: React.FC = () => {

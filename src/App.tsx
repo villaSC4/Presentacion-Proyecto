@@ -10,6 +10,8 @@ import { Home } from './pages/Home';
 import { CatalogPage } from './pages/CatalogPage';
 import { IngredientesPage } from './pages/IngredientesPage';
 import { ContactoPage } from './pages/ContactoPage';
+import { NosotrosPage } from './pages/NosotrosPage';
+import { ExperienciaPage } from './pages/ExperienciaPage';
 
 
 const ScrollToTop: React.FC = () => {
@@ -101,6 +103,22 @@ export const AppContent: React.FC = () => {
               element={
                 <PageTransition>
                   <ContactoPage onOpenBooking={() => handleOpenBooking()} />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/nosotros"
+              element={
+                <PageTransition>
+                  <NosotrosPage onOpenBooking={() => handleOpenBooking()} />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/experiencia"
+              element={
+                <PageTransition>
+                  <ExperienciaPage onOpenBooking={() => handleOpenBooking()} />
                 </PageTransition>
               }
             />
