@@ -179,7 +179,6 @@ function VideoCard({ src, title, desc }: { src: string; title: string; desc: str
 export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => {
   const [activeCategory, setActiveCategory] = useState<'todos' | 'relajantes' | 'descontracturantes' | 'detox'>('todos');
 
-  // Hero Scroll Animation Hooks
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -197,10 +196,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
   return (
     <div className="bg-[#FAF7F2] min-h-screen text-[#2C1E18] font-sans antialiased selection:bg-[#B88A75] selection:text-white">
 
-      {/* ════════════════════════════════════════════════
-          1. HERO PRINCIPAL — Con Animación Scroll Dinámica
-          Sin color verde. Fondo beige cálido #F7F3ED, títulos espresso #3A2820
-      ════════════════════════════════════════════════ */}
+
       <section
         ref={heroRef}
         className="pt-32 pb-16 lg:pt-36 lg:pb-24 bg-[#F7F3ED] border-b border-[#EFECE6] relative overflow-hidden text-center"
@@ -210,7 +206,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
           className="max-w-4xl mx-auto px-5 sm:px-8 space-y-6 relative z-10"
         >
 
-          {/* Eyebrow / Tag superior con revelado animado */}
+
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -221,7 +217,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             </span>
           </motion.div>
 
-          {/* Título Principal */}
+
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
@@ -231,7 +227,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             Alivio y Bienestar en Cada Visita
           </motion.h1>
 
-          {/* Descripción del Concepto */}
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -243,7 +239,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             pero desarrolla una propuesta, comunicación y experiencia propias.
           </motion.p>
 
-          {/* Destacados del Respaldo */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -270,19 +266,16 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
       </section>
 
 
-      {/* ════════════════════════════════════════════════
-          2. SOBRE RELAX & RESPALDO QMEDIC
-          Ajustado: La tarjeta de QMEDIC ya NO tapa la imagen ni el texto
-      ════════════════════════════════════════════════ */}
+
       <section className="py-20 lg:py-24 bg-white border-b border-[#EFECE6]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
-            {/* Fotografía principal — Sello QMEDIC colocado limpiamente abajo sin tapar nada */}
+
             <AnimatedSection direction="left" className="lg:col-span-5">
               <div className="mx-auto max-w-md space-y-4">
                 
-                {/* Imagen Limpia con Gradiente de Texto */}
+
                 <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#F7F3ED] aspect-[4/5] relative group">
                   <img
                     src={portadaImg}
@@ -301,7 +294,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
                   </div>
                 </div>
 
-                {/* Sello de Respaldo QMEDIC — Debajo de la tarjeta sin obstaculizar nada */}
+
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -322,7 +315,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
               </div>
             </AnimatedSection>
 
-            {/* Texto y Puntos Clave */}
+
             <AnimatedSection direction="right" delay={0.15} className="lg:col-span-7 space-y-7">
               <div className="space-y-3">
                 <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-extrabold text-[#8C5A3E]">
@@ -365,14 +358,11 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
       </section>
 
 
-      {/* ════════════════════════════════════════════════
-          3. CATÁLOGO DE IMÁGENES Y DESCRIPCIONES (9 Experiencias)
-          Con Animación de Entrada Escalonada (Stagger reveal) al hacer Scroll
-      ════════════════════════════════════════════════ */}
+
       <section className="py-20 lg:py-28 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 space-y-12">
 
-          {/* Encabezado del Catálogo */}
+
           <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-extrabold text-[#8C5A3E] bg-white px-5 py-2 rounded-full border border-[#EFECE6] shadow-sm inline-block">
               Nuestras 9 Experiencias
@@ -385,7 +375,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             </p>
           </AnimatedSection>
 
-          {/* Filtros de Categoría */}
+
           <div className="flex flex-wrap justify-center gap-3">
             {[
               { id: 'todos', label: 'Todos los Masajes (9)' },
@@ -407,7 +397,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             ))}
           </div>
 
-          {/* Grid de Servicios con Animación de Scroll Escalonada */}
+
           <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -428,7 +418,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
                   className="bg-white rounded-3xl overflow-hidden border-2 border-[#EFECE6] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group"
                 >
-                  {/* Foto de la experiencia */}
+
                   <div className="relative h-64 overflow-hidden bg-gray-100">
                     <img
                       src={service.img}
@@ -444,7 +434,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
                     </div>
                   </div>
 
-                  {/* Detalle y Descripción */}
+
                   <div className="p-7 flex-1 flex flex-col justify-between space-y-5">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-xs font-bold text-gray-500 uppercase tracking-wider">
@@ -467,7 +457,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
                       </p>
                     </div>
 
-                    {/* Botón de Reserva Directa */}
+
                     <div className="pt-3 border-t border-gray-100">
                       <button
                         onClick={onOpenBooking}
@@ -488,9 +478,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
       </section>
 
 
-      {/* ════════════════════════════════════════════════
-          4. VIDEOS — La Experiencia en Movimiento
-      ════════════════════════════════════════════════ */}
+
       <section className="py-20 lg:py-28 bg-[#3C2A1E] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 space-y-14">
 
@@ -506,7 +494,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             </p>
           </AnimatedSection>
 
-          {/* Grid de 3 Videos Promocionales */}
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <AnimatedSection direction="up" delay={0.1}>
               <VideoCard
@@ -531,7 +519,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             </AnimatedSection>
           </div>
 
-          {/* Tags Informativos */}
+
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             {[
               '✦ Aromaterapia 100% Natural',
@@ -550,9 +538,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
       </section>
 
 
-      {/* ════════════════════════════════════════════════
-          5. NUEVA SECCIÓN FINAL — Cálida, Elegante y Bonita para Nosotros
-      ════════════════════════════════════════════════ */}
+
       <section className="py-20 lg:py-28 bg-[#F7F3ED] relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12">
 
@@ -563,7 +549,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
             transition={{ duration: 0.8, ease }}
             className="bg-white rounded-3xl p-8 sm:p-14 border-2 border-[#EFECE6] shadow-2xl text-center space-y-9 relative overflow-hidden"
           >
-            {/* Glows cálidos de fondo */}
+
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#B88A75]/15 rounded-full blur-[90px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D4AF37]/15 rounded-full blur-[90px] pointer-events-none" />
 
@@ -583,7 +569,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
               </p>
             </div>
 
-            {/* Tarjetas de Información Relevante */}
+
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 relative z-10">
               <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#EFECE6] flex flex-col items-center space-y-2.5">
                 <div className="w-12 h-12 rounded-2xl bg-[#3C2A1E] text-[#E5B869] flex items-center justify-center shadow-md">
@@ -617,7 +603,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
               </div>
             </div>
 
-            {/* Acciones principales sin verde */}
+
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
               <Button
                 variant="clay"
@@ -639,7 +625,7 @@ export const NosotrosPage: React.FC<NosotrosPageProps> = ({ onOpenBooking }) => 
               </a>
             </div>
 
-            {/* Sello de Marca RELAX by QMEDIC */}
+
             <div className="pt-6 border-t border-gray-200 flex items-center justify-center gap-3 relative z-10">
               <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#B88A75]">
                 <img src={logoImg} alt="RELAX by QMEDIC" className="w-full h-full object-cover" />

@@ -44,7 +44,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
         }}
       />
 
-      {/* Capa de Decoración de fondo (Almendras / Jojoba / Uvas dispersas visibiles y claras) */}
+
       <AnimatePresence>
         {currentProduct.decoration && (
           <motion.div
@@ -113,7 +113,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
               >
 
 
-                {/* Columna Izquierda: Imagen del producto apareciendo desde la izquierda */}
+
                 <motion.div
                   initial={{ opacity: 0, x: -70, scale: 0.95 }}
                   animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -121,7 +121,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                   transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1.0] }}
                   className="lg:col-span-6 relative flex items-center justify-center min-h-[340px] sm:min-h-[420px] py-4"
                 >
-                  {/* Botella del Producto - Mayor tamaño, protagonismo y sombra suave */}
+
                   <motion.div
                     key={`bottle-${currentProduct.id}`}
                     initial={{ scale: 0.9, rotate: -2 }}
@@ -136,17 +136,17 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                     }}
                     className="relative cursor-grab active:cursor-grabbing flex items-center justify-center py-2 z-20"
                   >
-                    {/* Sombra oscura y suave para integrar la botella */}
+
                     <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 sm:w-64 md:w-72 h-8 sm:h-10 bg-black/55 blur-xl rounded-[100%] pointer-events-none -z-10 transform scale-y-50" />
 
-                    {/* Imagen principal de la botella */}
+
                     <img
                       src={currentProduct.image}
                       alt={currentProduct.name}
                       className="h-64 sm:h-80 md:h-[400px] lg:h-[440px] w-auto object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-transform duration-500 ease-out"
                     />
 
-                    {/* Etiqueta / Tag */}
+
                     <div className="absolute top-0 right-0 sm:-top-2 sm:-right-2 bg-white/95 text-[#2A2826] text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-white/60 z-30">
                       {currentProduct.tag}
                     </div>
@@ -154,7 +154,7 @@ export const OilsCarouselSection: React.FC<OilsCarouselSectionProps> = ({ onOpen
                 </motion.div>
 
 
-                {/* Columna Derecha: Texto y detalles apareciendo desde la derecha */}
+
                 <motion.div
                   initial={{ opacity: 0, x: 70 }}
                   animate={{ opacity: 1, x: 0 }}

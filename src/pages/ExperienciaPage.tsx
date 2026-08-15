@@ -13,8 +13,8 @@ import detoxMuscularImg from '../assets/img/Detox Muscular.png';
 import detoxInferiorImg from '../assets/img/Detox Muscular Inferior.PNG';
 import descontSuperiorImg from '../assets/img/Descontracturante Trend Superior.PNG';
 
-import relajacion2 from '../assets/video/relajacion2.mp4';
-import dreamRelaxVideo from '../assets/video/DreamRelax.mp4';
+import relajante1 from '../assets/video/relajante1.mp4';
+import relajante2 from '../assets/video/relajante2.mp4';
 import detoxMuscularVideo from '../assets/video/DetoxMuscular.mp4';
 
 interface ExperienciaPageProps {
@@ -129,9 +129,7 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
   return (
     <div className="bg-[#FAF7F2] min-h-screen text-[#2C1E18] font-sans antialiased selection:bg-[#B88A75] selection:text-white">
 
-      {/* ════════════════════════════════════════════════
-          1. HERO PRINCIPAL DE EXPERIENCIA
-      ════════════════════════════════════════════════ */}
+
       <section
         ref={heroRef}
         className="pt-32 pb-16 lg:pt-36 lg:pb-24 bg-[#F7F3ED] border-b border-[#EFECE6] relative overflow-hidden text-center"
@@ -200,10 +198,7 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
       </section>
 
 
-      {/* ════════════════════════════════════════════════
-          2. PILARES VISUALES CON IMÁGENES Y ANIMACIONES
-          (Ambiente, Beneficios, Tecnología, Reflexología, Técnicas)
-      ════════════════════════════════════════════════ */}
+
       <section className="py-20 lg:py-28 bg-white border-b border-[#EFECE6]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 space-y-16">
 
@@ -219,7 +214,7 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
             </p>
           </AnimatedSection>
 
-          {/* Grid de Pilares con Imágenes Integradas y Efectos Hover */}
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PILLARS.map((pillar, index) => {
               const IconComponent = pillar.icon;
@@ -233,7 +228,7 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
                   className="bg-[#FAF7F2] rounded-3xl overflow-hidden border-2 border-[#EFECE6] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
                 >
-                  {/* Foto Ilustrativa de la Experiencia */}
+
                   <div className="relative h-56 overflow-hidden bg-gray-100">
                     <img
                       src={pillar.img}
@@ -278,13 +273,11 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
       </section>
 
 
-      {/* ════════════════════════════════════════════════
-          3. SECCIONES VISUALES CON VIDEOS E IMÁGENES REALES
-      ════════════════════════════════════════════════ */}
+
       <section className="py-20 lg:py-28 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 space-y-20">
 
-          {/* Bloque 1: AMBIENTE DE SANTUARIO */}
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimatedSection direction="left" className="lg:col-span-6 space-y-6">
               <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-extrabold text-[#8C5A3E]">
@@ -313,14 +306,14 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
 
             <AnimatedSection direction="right" className="lg:col-span-6">
               <AutoVideoCard
-                src={relajacion2}
+                src={relajante1}
                 title="Santuario de Calma"
                 desc="Un entorno pensado al milímetro para tu confort."
               />
             </AnimatedSection>
           </div>
 
-          {/* Bloque 2: TECNOLOGÍA V-CONIC SIN DOLOR */}
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimatedSection direction="left" className="lg:col-span-6 order-2 lg:order-1">
               <AutoVideoCard
@@ -357,7 +350,7 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
             </AnimatedSection>
           </div>
 
-          {/* Bloque 3: REFLEXOLOGÍA PODAL & TÉCNICAS */}
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimatedSection direction="left" className="lg:col-span-6 space-y-6">
               <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-extrabold text-[#8C5A3E]">
@@ -384,7 +377,7 @@ export const ExperienciaPage: React.FC<ExperienciaPageProps> = ({ onOpenBooking 
 
             <AnimatedSection direction="right" className="lg:col-span-6">
               <AutoVideoCard
-                src={dreamRelaxVideo}
+                src={relajante2}
                 title="Técnicas y Reflexología"
                 desc="Masaje corporal completo con reflexología podal."
               />

@@ -95,9 +95,9 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onSelectServ
                         />
                       )}
                     </AnimatePresence>
-                    {/* Gradient overlay premium */}
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    {/* Badge de duración flotante */}
+
                     <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#4A3E3D] text-[10px] font-semibold px-2.5 py-1 rounded-full shadow-sm">
                       {currentDuration}
                     </span>

@@ -32,7 +32,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 lg:hidden">
-        {/* Backdrop */}
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -41,7 +41,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           className="fixed inset-0 bg-black/50 backdrop-blur-xs"
         />
 
-        {/* Drawer */}
+
         <motion.div
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
@@ -50,7 +50,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           className="fixed inset-y-0 right-0 w-full max-w-xs bg-[#FAF8F5] shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-[#EFECE6]"
         >
           <div>
-            {/* Header */}
+
             <div className="flex items-center justify-between pb-6 border-b border-[#EFECE6]">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl shadow-sm border border-[#8C5A3E]/30 overflow-hidden shrink-0">
@@ -77,7 +77,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               </button>
             </div>
 
-            {/* Navigation Items */}
+
             <nav className="py-6 space-y-1">
               <NavLink
                 to="/"
@@ -107,7 +107,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 Nosotros
               </NavLink>
 
-              {/* Servicios con Subcategorías */}
+
               <div className="space-y-1">
                 <div className="flex items-center justify-between px-4 py-3 rounded-xl text-[#2A2826] hover:bg-[#EFECE6]">
                   <NavLink
@@ -192,7 +192,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             </nav>
           </div>
 
-          {/* Footer Info */}
+
           <div className="pt-6 border-t border-[#EFECE6] space-y-4">
             <button
               onClick={() => {

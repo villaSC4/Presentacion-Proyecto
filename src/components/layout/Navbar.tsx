@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
 
-            {/* Logo */}
+
             <NavLink to="/" className="group flex items-center gap-3 cursor-pointer">
               <div className="w-11 h-11 rounded-2xl group-hover:scale-105 transition-transform overflow-hidden shadow-sm border border-[#B88A75]/40">
                 <img
@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </div>
             </NavLink>
 
-            {/* Navigation Links */}
+
             <nav className={`hidden lg:flex items-center gap-1 px-4 py-2 rounded-full border backdrop-blur-md transition-all ${
               isScrolled
                 ? 'bg-[#EFE7DD]/80 border-[#CBB5A1]'
@@ -154,7 +154,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesHovered ? 'rotate-180' : ''}`} />
                       </NavLink>
 
-                      {/* Dropdown Menu de Servicios */}
+
                       <AnimatePresence>
                         {isServicesHovered && (
                           <motion.div
@@ -220,7 +220,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               })}
             </nav>
 
-            {/* CTA Button */}
+
             <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={onOpenBooking}
@@ -231,7 +231,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </button>
             </div>
 
-            {/* Mobile Actions */}
+
             <div className="flex items-center gap-2 lg:hidden">
               <button
                 onClick={onOpenBooking}
