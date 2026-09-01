@@ -44,10 +44,6 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="hero-badge-pill">
-                <span className="pulse-dot"></span>
-                <span>Hub Especializado en Marcas de Ajinomoto del Perú</span>
-              </div>
 
               <h1 className="hero-heading">
                 Convertimos Marcas en <span className="gradient-text">Lovemarks</span> Inolvidables
